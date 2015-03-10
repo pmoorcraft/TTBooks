@@ -12,9 +12,9 @@
 		
 	<body>
 		
-	  <%= render "navbar" %>
-	  <%= render "logobanner" %>	  
-	  <%= render "newsletterform" %>
+	  <%= render "shared/navbar" %>
+	  <%= render "shared/logobanner" %>	  
+	  <%= render "shared/newsletterform" %>
 	  
 	  <div class="button-container">
 	  	<button class="btn btn-lg btn-primary btn-block"><a class="button" href="http://mail.send-email-campaign.eu/pp/a5fnh6r5g9/fkwjzguz54/">February Edition</a></button> 
@@ -26,7 +26,7 @@
 	  	<h2 class="sub-header">Latest Talks</h2>	  	
 	  	<h3 class="sub-header">For Operators:</h3>
 	  	
-	  	<%= render "operatortalks" %>	  	
+	  	<%= render "videos/operatortalks" %>	  	
 
 	  	<h3 class="sub-header">For Investors:</h3>			
 	  	
@@ -40,8 +40,8 @@
 	    <h2 class="sub-header">Latest Books</h2>
 	    <h3 class="sub-header">For Operators:</h3>
 	    
-	  	<%= render "operatorbooks" %>
-	  	
+	  	<%= render "books/operatorbooks" %>
+	 
 	    <h3 class="sub-header">For Investors:</h3>			
 	  	
 	  	<h3 class="sub-header">Mixed/ Off-Topic:</h3>
@@ -54,7 +54,7 @@
 		</div>
 	  </div>
 	  
-	  <%= render "footer" %>
+	  <%= render "shared/footer" %>
 	  	  	  
 	</body>
 	

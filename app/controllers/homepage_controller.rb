@@ -1,10 +1,12 @@
 class HomepageController < ApplicationController
   
-  def index
-    @videos = Video.all
+  def index2
+    
   end
   
-  def index_books
+  def index
+    @books = Book.all
+    @videos = Video.all
   end
   
 end

@@ -1,10 +1,17 @@
 class BooksController < ApplicationController
   
   def new
+    @book = Book.new
   end
   
   def create
-    @book = Book.create ( params[:book] )
+    @book = Book.new(book_params) 
+    if @book.save
+      redirect_to root_url
+    else
+      redirect_to root_url
+      flash[:notice] = "Error"
+    end
   end
   
   def edit
@@ -19,12 +26,10 @@ class BooksController < ApplicationController
   def archive
   end
   
-  end
   
   private
   
   def book_params
-    params.require(:book).permit(:avatar)
-  
+    params.require(:book).permit(:avatar, :title, :header, :release, :publisher, :tag)
   end
 end
