@@ -1,0 +1,33 @@
+
+
+<iframe class ="video" width="560" height="315" src="https://www.youtube.com/embed/k1qvL3uHVI0" frameborder="0" allowfullscreen></iframe>		  
+			
+	<div class="panel panel-default">
+	  <!-- Default panel contents -->
+	<div class="panel-heading">
+		
+		<% @videos.each do |video| %>
+		<%= video.title %>
+		<% end %>
+	</div>
+	  <div class="panel-body">
+	    <p>Header</p>
+	  </div>
+	  <!-- Table -->
+	  <table class="table">
+	    <tr>
+			<td>Date</td>
+			<td>
+				Date
+				
+			</td>
+    	</tr>
+    	<tr>
+			<td>Speakers</td>
+			<td>Speakers</td>
+    	</tr>		    	
+	  </table>
+	</div>
+	<!-- End of Table -->
+	
+<button type="button" class="btn btn-warning btn-round">Tag</button>

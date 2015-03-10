@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyString
+  amazon: MyString
+  author: MyString
+  publisher: MyString
+  release: 2015-03-09
+
+two:
+  title: MyString
+  amazon: MyString
+  author: MyString
+  publisher: MyString
+  release: 2015-03-09

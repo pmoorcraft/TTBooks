@@ -11,6 +11,8 @@ gem 'sdoc',         '0.4.0', group: :doc
 gem 'bootstrap-sass', '~> 3.2.0'
 gem 'autoprefixer-rails'
 gem 'font-awesome-sass'
+gem "paperclip", :git => "git://github.com/thoughtbot/paperclip.git"
+
 
 group :development, :test do
   gem 'sqlite3',     '1.3.9'

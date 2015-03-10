@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+	<head>		
+		<%= stylesheet_link_tag "homepage.scss" %>
+		<title>Tech Talks and Books</title>
+	    <meta name="viewport" content="width=device-width, initial-scale=1">
+		<style type="text/css">
+			#mc_embed_signup{background:#cccccc; clear:right; margin-top: auto; margin-left: auto; margin-right: auto; font:17px Helvetica,Arial,sans-serif;  width:500px;}
+			/* Styling for Mailchimp form */
+		</style>
+	</head>
+		
+	<body>
+		
+	  <%= render "navbar" %>
+	  <%= render "logobanner" %>	  
+	  <%= render "newsletterform" %>
+	  
+	  <div class="button-container">
+	  	<button class="btn btn-lg btn-primary btn-block"><a class="button" href="http://mail.send-email-campaign.eu/pp/a5fnh6r5g9/fkwjzguz54/">February Edition</a></button> 
+	  </div>
+			
+		
+	  <div class="col-md-6">
+	  	
+	  	<h2 class="sub-header">Latest Talks</h2>	  	
+	  	<h3 class="sub-header">For Operators:</h3>
+	  	
+	  	<%= render "operatortalks" %>	  	
+
+	  	<h3 class="sub-header">For Investors:</h3>			
+	  	
+	  	<h3 class="sub-header">Mixed/ Off-Topic:</h3>
+		 
+	  	</div>	  	
+	  </div>
+	  	 	  
+	  <div class="col-md-6">
+	  
+	    <h2 class="sub-header">Latest Books</h2>
+	    <h3 class="sub-header">For Operators:</h3>
+	    
+	  	<%= render "operatorbooks" %>
+	  	
+	    <h3 class="sub-header">For Investors:</h3>			
+	  	
+	  	<h3 class="sub-header">Mixed/ Off-Topic:</h3>
+	  </div>	
+	  	
+	  	<!-- Begin MailChimp Popup -->
+	    <script type="text/javascript" src="//s3.amazonaws.com/downloads.mailchimp.com/js/signup-forms/popup/embed.js" data-dojo-config="usePlainJson: true, isDebug: false"></script><script type="text/javascript">require(["mojo/signup-forms/Loader"], function(L) { L.start({"baseUrl":"mc.us3.list-manage.com","uuid":"fa489b5d979064f7da4691642","lid":"c3520ee04d"}) })
+	    </script>
+	    <!-- End MailChimp Popup -->
+		</div>
+	  </div>
+	  
+	  <%= render "footer" %>
+	  	  	  
+	</body>
+	
+</html>
