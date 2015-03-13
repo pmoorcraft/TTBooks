@@ -1,0 +1,9 @@
+<%= form_for @video, url: {action: "create"}, html: {class: "nifty_form"} do |f| %>
+  <%= f.text_field :title %>
+  <%= f.text_area :url, size: "60x12" %>
+  <%= f.date_field :uploaded %>
+  <%= f.text_field :description %>
+  <%= f.text_field :speakers %>
+  <%= f.text_field :tag %>
+  <%= f.submit "Create" %>
+<% end %>
