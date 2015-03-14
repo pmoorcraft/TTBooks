@@ -1,34 +1,33 @@
 <% @investorvideos.each do |video| %>
-
-    <iframe class ="video" width="560" height="315" src="video.url" frameborder="0" allowfullscreen></iframe>		  
-			
-	<div class="panel panel-default">
-	  <!-- Default panel contents -->
+		
+	<div class="panel panel-default">	
 	<div class="panel-heading">
-		
-		
-		<%= video.title %>
-		
+	
+	<%= video.title %>	
+
 	</div>
 	  <div class="panel-body">
-	    <p>Header</p>
+	  	
+	    <p>
+	    	<iframe width="522" height="349" src="<%= video.url %>"></iframe>
+	    	<br />
+	    	<%= video.description %>
+	    </p>
+	    	
 	  </div>
-	  <!-- Table -->
+
 	  <table class="table">
 	    <tr>
 			<td>Date</td>
-			<td>
-				Date
-				
-			</td>
+			<td><%= video.uploaded %></td>
     	</tr>
     	<tr>
 			<td>Speakers</td>
-			<td>Speakers</td>
+			<td><%= video.speakers %></td>
     	</tr>		    	
 	  </table>
 	</div>
+	<button type="button" class="btn btn-warning btn-round"><%= video.type %></button>
 <% end %>
 	<!-- End of Table -->
 	
-<button type="button" class="btn btn-warning btn-round">Tag</button>

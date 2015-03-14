@@ -1,9 +1,33 @@
 <%= form_for @video, url: {action: "create"}, html: {class: "nifty_form"} do |f| %>
+  <ul>
+  Title
   <%= f.text_field :title %>
-  <%= f.text_area :url, size: "60x12" %>
+  </ul>
+  <ul>
+  Embed URL
+  <%= f.text_field :url %>
+  </ul>
+  <ul>
+  Upload date
   <%= f.date_field :uploaded %>
-  <%= f.text_field :description %>
+  </ul>
+  <ul>
+  Description
+  <%= f.text_area :description, size: "40x5" %>
+  </ul>
+  <ul>
+  Speakers
   <%= f.text_field :speakers %>
+  </ul>
+  <ul>
+  Tag
   <%= f.text_field :tag %>
+  </ul>
+  <ul>
+  Type (i.e- tag button)
+  <%= f.text_field :type %>
+  </ul>
+  <ul>
   <%= f.submit "Create" %>
+  </ul>
 <% end %>
