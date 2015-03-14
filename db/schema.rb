@@ -11,9 +11,9 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150309235702) do
+ActiveRecord::Schema.define(version: 20150314232451) do
 
-  create_table "books", force: :cascade do |t|
+  create_table "Books", force: :cascade do |t|
     t.string   "title"
     t.string   "amazon"
     t.string   "author"
@@ -27,12 +27,12 @@ ActiveRecord::Schema.define(version: 20150309235702) do
     t.datetime "avatar_updated_at"
     t.string   "tag"
     t.string   "header"
-    t.string   "type"
+    t.string   "genre"
   end
 
-  add_index "books", ["title"], name: "index_books_on_title"
+  add_index "Books", ["title"], name: "index_books_on_title"
 
-  create_table "videos", force: :cascade do |t|
+  create_table "Videos", force: :cascade do |t|
     t.string   "title"
     t.string   "url"
     t.text     "description"
@@ -42,9 +42,9 @@ ActiveRecord::Schema.define(version: 20150309235702) do
     t.datetime "updated_at",  null: false
     t.string   "tag"
     t.string   "header"
-    t.string   "type"
+    t.string   "genre"
   end
 
-  add_index "videos", ["title"], name: "index_videos_on_title"
+  add_index "Videos", ["title"], name: "index_videos_on_title"
 
 end
