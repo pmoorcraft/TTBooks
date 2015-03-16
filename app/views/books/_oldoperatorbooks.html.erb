@@ -1,0 +1,32 @@
+<% @oldoperatorbooks.each do |book| %>
+<div class="book">
+	
+    <a href="#amazon">book image</a>		  	
+  	<div class="panel panel-default">
+  		
+	  <!-- Default panel contents -->
+	  <div class="panel-heading">
+	  	<%= book.title %></div>
+	  <div class="panel-body">
+	    <p><%= book.header %></p>
+	    
+	  </div>			
+	  <!-- Table -->
+	  <table class="table">
+	    <tr>
+			<td>Release date</td>
+			<td><%= book.release %></td>
+    	</tr>
+    	<tr>
+			<td>Author</td>
+			<td><%= book.author %></td>
+    	</tr>	
+    	<tr>
+			<td>Publisher</td>
+			<td><%= book.publisher %></td>
+    	</tr>	    	
+	  </table>
+	  <button type="button" class="btn btn-warning btn-round"><a><%= book.genre %></a></button>
+	</div>			
+</div>
+<% end %>

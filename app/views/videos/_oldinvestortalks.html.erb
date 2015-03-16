@@ -1,0 +1,32 @@
+<% @oldinvestorvideos.each do |video| %>
+		
+	<div class="panel panel-default">	
+	<div class="panel-heading">
+	
+	<%= video.title %>	
+
+	</div>
+	  <div class="panel-body">
+	  	
+	    <p>
+	    	<iframe width="522" height="349" src="<%= video.url %>"></iframe>
+	    	<br />
+	    	<%= video.description %>
+	    </p>
+	    	
+	  </div>
+
+	  <table class="table">
+	    <tr>
+			<td>Date</td>
+			<td><%= video.uploaded %></td>
+    	</tr>
+    	<tr>
+			<td>Speakers</td>
+			<td><%= video.speakers %></td>
+    	</tr>		    	
+	  </table>
+	</div>
+	<button type="button" class="btn btn-success btn-round"><%= video.genre %></button>
+<% end %>
+	<!-- End of Table -->

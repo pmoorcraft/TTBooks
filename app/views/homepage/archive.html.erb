@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+	<head>		
+		<%= stylesheet_link_tag "homepage.css" %>
+		<title>Tech Talks and Books</title>
+	    <meta name="viewport" content="width=device-width, initial-scale=1">
+		<style type="text/css">
+			#mc_embed_signup{background:#cccccc; clear:right; margin-top: auto; margin-left: auto; margin-right: auto; font:17px Helvetica,Arial,sans-serif;  width:500px;}
+			/* Styling for Mailchimp form */
+		</style>
+	</head>
+		
+	<body>
+		
+	  <%= render "shared/navbar" %>
+	  <%= render "shared/logobanner" %>	  
+
+	  <div class="button-container">
+	  	<button class="btn btn-lg btn-primary btn-block"><a class="button" href="http://mail.send-email-campaign.eu/pp/a5fnh6r5g9/fkwjzguz54/">February Edition</a></button> 
+	  </div>
+			
+	  <div class="col-md-6">
+	  	
+	  	<h2 class="sub-header">Latest Talks</h2>	  	
+	  	<h3 class="sub-header">For Operators:</h3>
+	  	  	
+		<%= render "books/oldoperatorbooks" %>	 
+		
+	  	<h3 class="sub-header">For Investors:</h3>			
+	  	<%= render "books/oldinvestorbooks" %>
+	  	
+	  	<h3 class="sub-header">Mixed/ Off-Topic:</h3>
+		<%= render "books/oldotherbooks" %>
+	  	</div>	  	
+	  </div>
+	  	 	  
+	  <div class="col-md-6">
+	  
+	    <h2 class="sub-header">Latest Books</h2>
+	    <h3 class="sub-header">For Operators:</h3>
+		<%= render "videos/oldoperatortalks" %>
+	 
+	    <h3 class="sub-header">For Investors:</h3>
+		<%= render "videos/oldinvestortalks" %>
+	  	
+	  	<h3 class="sub-header">Mixed/ Off-Topic:</h3>
+	  	
+	  	<%= render "videos/oldothertalks" %>
+	  	
+	  </div>	
+	  	
+		</div>
+	  </div>
+	  
+	  <%= render "shared/footer" %>
+	  	  	  
+	</body>
+	
+</html>

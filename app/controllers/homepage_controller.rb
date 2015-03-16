@@ -4,17 +4,38 @@ class HomepageController < ApplicationController
     
     
     @books = Book.all
-    
-    @operatorbooks = @books.find_all {|i| i.tag == "operators" }
-    @investorbooks = @books.find_all {|i| i.tag == "investors" }
-    @otherbooks = @books.find_all {|i| i.tag == "other" }
+    @recentbooks = Book.where(release: (30.days.ago..Time.now))
     
     
+    @operatorbooks = @recentbooks.find_all {|i| i.tag == "operators" }
+    @investorbooks = @recentbooks.find_all {|i| i.tag == "investors" }
+    @otherbooks = @recentbooks.find_all {|i| i.tag == "other" }
+
+
     @videos = Video.all
+    @recentvideos = Video.where(uploaded: (30.days.ago..Time.now))
     
-    @operatorvideos = @videos.find_all {|i| i.tag == "operators" }
-    @investorvideos = @videos.find_all {|i| i.tag == "investors" }
-    @othervideos = @videos.find_all {|i| i.tag == "other" }
+    
+    @operatorvideos = @recentvideos.find_all {|i| i.tag == "operators" }
+    @investorvideos = @recentvideos.find_all {|i| i.tag == "investors" }
+    @othervideos = @recentvideos.find_all {|i| i.tag == "other" }
   end
   
+  
+  def archive
+    @oldbooks = Book.where(release: (700.days.ago..30.days.ago))
+    @oldoperatorbooks = @oldbooks.find_all {|i| i.tag == "operators" }
+    @oldinvestorbooks = @oldbooks.find_all {|i| i.tag == "investors" }
+    @oldotherbooks = @oldbooks.find_all {|i| i.tag == "other" }
+    
+        
+    @oldvideos = Video.where(uploaded: (700.days.ago..30.days.ago))
+    @oldoperatorvideos = @oldvideos.find_all {|i| i.tag == "operators" }
+    @oldinvestorvideos = @oldvideos.find_all {|i| i.tag == "investors" }
+    @oldothervideos = @oldvideos.find_all {|i| i.tag == "other" }
+  end
+  
+  def about
+  
+  end
 end
