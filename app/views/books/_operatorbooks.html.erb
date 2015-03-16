@@ -6,7 +6,7 @@
   		
 	  <!-- Default panel contents -->
 	  <div class="panel-heading">
-	  	<%= book.title %></div>
+	  	<a href="<%= book.amazon %>">	<%= book.title %></a></div>
 	  <div class="panel-body">
 	    <p><%= book.header %></p>
 	    
@@ -26,7 +26,8 @@
 			<td><%= book.publisher %></td>
     	</tr>	    	
 	  </table>
-	  <button type="button" class="btn btn-warning btn-round"><a><%= book.genre %></a></button>
+	 
 	</div>			
 </div>
+<button type="button" class="btn btn-warning btn-round"><a><%= book.genre %></a></button>
 <% end %>

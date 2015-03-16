@@ -4,6 +4,3 @@
 # Examples:
 #
    # cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
-   Video.create(title: 'test video1', tag: 'operators')
-   Book.create(title: 'test video1', tag: 'operators')
-  

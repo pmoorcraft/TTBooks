@@ -1,9 +1,21 @@
 <%= form_for @book, url: {action: "create"}, html: {class: "nifty_form"} do |f| %>
+  title
   <%= f.text_field :title %>
+  URL
+  <%= f.text_field :amazon %>
+  avatar
+  <%= f.file_field :avatar %>
+  header
   <%= f.text_area :header, size: "60x12" %>
+  release
   <%= f.date_field :release %>
+  author
   <%= f.text_field :author %>
+  publisher
   <%= f.text_field :publisher %>
+  tag
   <%= f.text_field :tag %>
+  genre
+  <%= f.text_field :genre %>
   <%= f.submit "Create" %>
 <% end %>

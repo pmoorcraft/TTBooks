@@ -1,12 +1,15 @@
 <% @investorbooks.each do |book| %>
 <div class="book">
-	
-    <a href="#amazon">book image</a>		  	
+	<div id="avatar">
+    <%= image_tag book.avatar.url(:medium) %>  	
+  	
+  	</div>
   	<div class="panel panel-default">
   		
+  	  
 	  <!-- Default panel contents -->
 	  <div class="panel-heading">
-	  	<%= book.title %></div>
+	  <a href="<%= book.amazon %>">	<%= book.title %></a></div>
 	  <div class="panel-body">
 	    <p><%= book.header %></p>
 	    
@@ -26,7 +29,8 @@
 			<td><%= book.publisher %></td>
     	</tr>	    	
 	  </table>
-	  <button type="button" class="btn btn-success btn-round"><%= book.genre %></button>
+	  
 	</div>			
 </div>
+<button type="button" class="btn btn-success btn-round"><%= book.genre %></button>
 <% end %>
