@@ -1,4 +1,5 @@
 class BooksController < ApplicationController
+  before_filter :authorize
   
   def new
     @book = Book.new
@@ -23,8 +24,6 @@ class BooksController < ApplicationController
   def this_month
   end
   
-  def archive
-  end
   
   
   private

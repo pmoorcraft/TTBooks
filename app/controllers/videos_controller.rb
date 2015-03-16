@@ -1,4 +1,5 @@
 class VideosController < ApplicationController
+  before_filter :authorize
   
   def new
     @video = Video.new
