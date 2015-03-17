@@ -4,7 +4,7 @@ class HomepageController < ApplicationController
     
     
     @books = Book.all
-    @recentbooks = Book.where(release: (30.days.ago..30.days.from_now))
+    @recentbooks = Book.where(release: (15.days.ago..30.days.from_now))
     
     
     @operatorbooks = @recentbooks.find_all {|i| i.tag == "operators" }
@@ -13,7 +13,7 @@ class HomepageController < ApplicationController
 
 
     @videos = Video.all
-    @recentvideos = Video.where(uploaded: (30.days.ago..Time.now))
+    @recentvideos = Video.where(uploaded: (20.days.ago..Time.now))
     
     
     @operatorvideos = @recentvideos.find_all {|i| i.tag == "operators" }
@@ -23,13 +23,13 @@ class HomepageController < ApplicationController
   
   
   def archive
-    @oldbooks = Book.where(release: (700.days.ago..30.days.ago))
+    @oldbooks = Book.where(release: (1000.days.ago..20.days.ago))
     @oldoperatorbooks = @oldbooks.find_all {|i| i.tag == "operators" }
     @oldinvestorbooks = @oldbooks.find_all {|i| i.tag == "investors" }
     @oldotherbooks = @oldbooks.find_all {|i| i.tag == "other" }
     
         
-    @oldvideos = Video.where(uploaded: (700.days.ago..30.days.ago))
+    @oldvideos = Video.where(uploaded: (1000.days.ago..20.days.ago))
     @oldoperatorvideos = @oldvideos.find_all {|i| i.tag == "operators" }
     @oldinvestorvideos = @oldvideos.find_all {|i| i.tag == "investors" }
     @oldothervideos = @oldvideos.find_all {|i| i.tag == "other" }
