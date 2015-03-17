@@ -4,7 +4,7 @@ class HomepageController < ApplicationController
     
     
     @books = Book.all
-    @recentbooks = Book.where(release: (30.days.ago..Time.now))
+    @recentbooks = Book.where(release: (30.days.ago..30.days.from_now))
     
     
     @operatorbooks = @recentbooks.find_all {|i| i.tag == "operators" }

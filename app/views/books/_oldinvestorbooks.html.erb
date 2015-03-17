@@ -1,7 +1,10 @@
 <% @oldinvestorbooks.each do |book| %>
 <div class="book">
 	
-    <a href="#amazon">book image</a>		  	
+    <div id="avatar">
+    <%= image_tag book.avatar.url(:medium) %>  	
+  	
+  	</div>		  	
   	<div class="panel panel-default">
   		
 	  <!-- Default panel contents -->
