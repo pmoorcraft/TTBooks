@@ -2,14 +2,14 @@
 <div class="book">
 	
     <div id="avatar">
-    <a href="<%= book.amazon %>"><%= image_tag book.avatar.url(:medium) %>  	</a>
+    <a href="<%= book.amazon %>"><%= image_tag book.avatar.url(:medium) %> </a>
   	
   	</div>		  	
   	<div class="panel panel-default">
   		
 	  <!-- Default panel contents -->
 	  <div class="panel-heading">
-	  	<%= book.title %></div>
+	  <a href="<%= book.amazon %>">	<%= book.title %></a></div>
 	  <div class="panel-body">
 	    <p><%= book.header %></p>
 	    
