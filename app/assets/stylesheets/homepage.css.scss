@@ -13,7 +13,7 @@ html {
   }
   
   body {
-    /* Margin bottom by footer height */
+    /* Margin bottom by footer height background: CCCCCC*/
     margin-bottom: 120px;
     background: #CCCCCC;
     font-family: 'Open Sans', sans-serif;
@@ -33,7 +33,10 @@ html {
     text-decoration: none;
   }
   
-  
+  #sectiontitle  {
+    
+    align: left;
+  }
   .navbar-brand-centered {
         position: absolute;
         left: 50%;
@@ -48,8 +51,18 @@ html {
         color: white;
     }
   
-  h3  {
+  h1  {
+    text-align: center;
     margin-left: auto;
+    margin-right: auto;
+  }
+  
+  
+  
+  h3  {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
   }
   
   
@@ -67,11 +80,7 @@ html {
     font-color: white;
     } 
    }
-  
-  .page-header  {
-    padding-top: -70px;
-  }
-  
+    
   .panel  {
     width: 560px;
   }
@@ -80,23 +89,18 @@ html {
   .button-container  {
     margin-top: auto;
     margin-left: auto;
-      margin-right: auto;
-      width: 200px;
+      margin-right: 100px;
+      width: 300px;
     
   }
   
+  .table  {
+    padding-bottom: 100px
+  }
+
   
-  
-#mc_embed_signup  {
-    background: #cccccc; 
-    clear: right; 
-    margin-top: auto; 
-    margin-left: auto; 
-    margin-right: auto; 
-    width: 50%;
-}
   .sub-header {
-    text-align: center;
+    align: left;
   }
   
   
@@ -131,7 +135,7 @@ html {
     margin-left: auto;
       margin-right: auto; 
    }
-  
+
   .btn-primary  {
     
     margin-left: auto;
@@ -157,19 +161,29 @@ html {
     }
   }
   .btn-default {
-    color: #333;
-    background-color: #ffffff;
-    border-color: #000000;
-    &:hover {
-              background-color: #ffffff;
-              color: #000000;        
+    color: white;
+    background-color: #aaa;
+    border-radius: 4px;
+    font-size: 15px;
+    font-weight: bold;
+    height: 32px;
+    margin-top: 35px;
+    margin-bottom: 15px;
+
+      &:hover {
+              background-color: #777; 
+              color: white;   
     }
   }
   .page-header {
     margin-top: auto;
     margin-left: auto;
       margin-right: auto;
-      width: 70%;   
+      width: 100%;  
+    padding-left: 350px;
+    padding-right: 350px; 
+    colour: black;
+    border-bottom: 2px solid black;
    }
    
 
@@ -187,16 +201,18 @@ html {
    }
    
    .col-md-6 {
-    padding-top: 25px;
+    padding-top: 15px;
       padding-right: 50px;
-      padding-bottom: 250px;
+      padding-bottom: 10px;
       padding-left: 50px;
-    margin-left: auto;
+      margin-left: auto;
       margin-right: auto;
+      margin-bottom: 50px;
    }
    
    .col-md-12  {
-    padding-bottom: 10px;
+    padding-bottom: 0px;
+    border-bottom: 2px solid black;
 
    }
    
@@ -205,7 +221,7 @@ html {
       bottom: 0;
       width: 100%;
     /* Set the fixed height of the footer here */
-      height: 115px;
+      height: 60px;
       background-color: #000000;
       margin-left: auto;
       margin-right: auto;
@@ -218,7 +234,9 @@ html {
    
    .fa  {
     margin-left: auto;
-      margin-right: auto;
+    margin-right: auto;
+    padding-top: 10px;
+    margin-bottom: auto;
    }
    
    .fa-youtube  {
