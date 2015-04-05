@@ -69,6 +69,8 @@ GEM
       sass (~> 3.2)
     globalid (0.3.3)
       activesupport (>= 4.1.0)
+    google-webfonts (0.2.0)
+      actionpack (>= 3.0.0)
     hike (1.2.3)
     i18n (0.7.0)
     jbuilder (2.2.3)
@@ -177,6 +179,7 @@ DEPENDENCIES
   byebug (= 3.4.0)
   coffee-rails (= 4.1.0)
   font-awesome-sass
+  google-webfonts
   jbuilder (= 2.2.3)
   jquery-rails (= 4.0.3)
   paperclip (~> 4.2)

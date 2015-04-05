@@ -8,6 +8,7 @@
 @import "font-awesome";
 
 
+
 html {
     position: relative;
     min-height: 100%;    
@@ -17,7 +18,8 @@ html {
     /* Margin bottom by footer height background: CCCCCC*/
     margin-bottom: 120px;
     background: #CCCCCC;
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Montserrat', sans-serif;
+    letter-spacing: -0.5px;
   }
   
   #avatar {
@@ -28,11 +30,16 @@ html {
     
   }
   
- 
-  #navlogo {
-    color: white;
-    text-decoration: none;
+  #navlogo  {
+    height: 52px;
+    width: 50px;
+    padding-top: 1px;
+    padding-right: 1px;
+    padding-bottom: 1px;
+    padding-left: 1px;
   }
+ 
+
   
   #sectiontitle  {
     
@@ -42,9 +49,12 @@ html {
         position: absolute;
         left: 50%;
         display: block;
-        width: 160px;
+        width: 190px;
         text-align: center;
         background-color: transparent;
+        padding-top: 1px;
+       
+        
     }
     .navbar>.container .navbar-brand-centered, 
     .navbar>.container-fluid .navbar-brand-centered {
@@ -56,6 +66,7 @@ html {
     text-align: center;
     margin-left: auto;
     margin-right: auto;
+    font-family: 'Montserrat', sans-serif;
   }
   
   
@@ -75,13 +86,36 @@ html {
     margin-left: -400px;
   }
   
+  p  {
+    font-family: 'Lato';
+    letter-spacing: -0.5px;
+  }
+  
+  td  {  
+    font-family: 'Lato';
+    letter-spacing: -0.5px;
+  }
+  
   .navbar  {
     background: black;
     a {
     font-color: white;
     } 
-   }
     
+   }
+  
+  .navbar .container { 
+    height: 53px; }
+   
+  .nav li a  {
+    padding-top: 16px;
+    padding-right: 8px;
+    padding-left: 1px;
+  }
+  
+   #tttitle  {
+     color: white;
+   }
   .panel  {
     width: 560px;
   }
@@ -205,7 +239,7 @@ html {
     padding-left: 350px;
     padding-right: 350px; 
     colour: black;
-    border-bottom: 2px solid black;
+    
    }
    
 
@@ -234,7 +268,6 @@ html {
    
    .col-md-12  {
     padding-bottom: 0px;
-    border-bottom: 2px solid black;
 
    }
    
