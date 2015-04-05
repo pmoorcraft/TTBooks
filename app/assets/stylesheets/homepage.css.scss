@@ -39,7 +39,10 @@ html {
     padding-left: 1px;
   }
  
-
+  #logobanner  {
+    width: 600px;
+    height: 240px; 
+  }
   
   #sectiontitle  {
     
@@ -75,11 +78,13 @@ html {
     text-align: center;
     margin-left: auto;
     margin-right: auto;
+    margin-top: 0px;
   }
   
   
   h4  {
     color: white;
+    
   }
   
   h5  {
@@ -164,11 +169,12 @@ html {
   }
   
   .img-responsive  {
-    padding-top: 15px;
-      padding-bottom: 15px; 
+    padding-top: 5px;
+      padding-bottom: 5px; 
     margin-top: auto;
     margin-left: auto;
       margin-right: auto; 
+     
    }
 
   .btn-primary  {
@@ -235,7 +241,7 @@ html {
     margin-top: auto;
     margin-left: auto;
       margin-right: auto;
-      width: 900px;  
+ 
     
     colour: black;
     
