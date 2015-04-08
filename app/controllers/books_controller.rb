@@ -24,6 +24,12 @@ class BooksController < ApplicationController
   def this_month
   end
   
+  def upvotebook
+   book = Book.find(params[:id])
+   book.votes.create
+
+   redirect_to root_url
+  end
   
   
   private

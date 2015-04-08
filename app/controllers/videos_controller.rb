@@ -30,7 +30,7 @@ class VideosController < ApplicationController
     @videos = Video.all
   end
   
-  def upvote
+  def upvotevideo
    video = Video.find(params[:id])
    video.votes.create
 

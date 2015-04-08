@@ -11,6 +11,14 @@
 	  <div class="panel-heading">
 	  <a href="<%= book.amazon %>">	<%= book.title %></a></div>
 	  <div class="panel-body">
+	  	<table class="table">
+	    	  <tr>
+	    	  
+ 			    <%= button_to '+1', upvotebook_book_path(book), method: :post, class: 'btn btn-small' %>
+ 			    <button class="btn btn-small" disabled style="margin-left: 1px;"><%= pluralize(book.votes.count, "vote") %></button>	 			
+ 			   
+ 			  </tr>	
+ 			</table>
 	    <p><%= book.header %></p>
 	    
 	  </div>			

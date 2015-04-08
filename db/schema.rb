@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150408133708) do
+ActiveRecord::Schema.define(version: 20150408153438) do
 
   create_table "Books", force: :cascade do |t|
     t.string   "title"
@@ -50,6 +50,7 @@ ActiveRecord::Schema.define(version: 20150408133708) do
   create_table "votes", force: :cascade do |t|
     t.integer "video_id"
     t.string  "ip"
+    t.integer "book_id"
   end
 
   add_index "votes", ["ip"], name: "index_votes_on_ip"

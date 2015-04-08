@@ -1,3 +1,4 @@
 class Vote < ActiveRecord::Base
-  belongs_to :topic
+  belongs_to :video
+  belongs_to :book
 end
