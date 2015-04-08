@@ -1,27 +1,26 @@
 <% @operatorbooks.each do |book| %>
 <div class="book">
+	
 	<div id="avatar">
-    <a href="<%= book.amazon %>"><%= image_tag book.avatar.url(:medium) %> </a> 	
-  	
+    <a href="<%= book.amazon %>"><%= image_tag book.avatar.url(:medium) %> </a> 	  	
   	</div>	  	
-  	<div class="panel panel-default">
-  		
-	  <!-- Default panel contents -->
-	  <div class="panel-heading">
+  	
+  	<div class="panel panel-default" id="bookpanel">
+  		<div class="panel-heading">
 	  	<a href="<%= book.amazon %>">	<%= book.title %></a></div>
 	  <div class="panel-body">
+	  	
 	  	<table class="table">
-	    	  <tr>
-	    	  
- 			    <%= button_to '+1', upvotebook_book_path(book), method: :post, class: 'btn btn-small' %>
- 			    <button class="btn btn-small" disabled style="margin-left: 1px;"><%= pluralize(book.votes.count, "vote") %></button>	 			
- 			   
- 			  </tr>	
- 			</table> 
+    	  <tr>	    	  
+		    <%= button_to '+1', upvotebook_book_path(book), method: :post, class: 'btn btn-small' %>
+		    <button class="btn btn-small" disabled style="margin-left: 1px;"><%= pluralize(book.votes.count, "vote") %></button>	 			 			   
+		  </tr>	
+		</table> 
+		
 	    <p><%= book.header %></p>
 	    
 	  </div>			
-	  <!-- Table -->
+	  
 	  <table class="table">
 	    <tr>
 			<td>Release date</td>
@@ -37,7 +36,8 @@
     	</tr>	    	
 	  </table>
 	 
-	</div>			
+	</div>	
+	<button type="button" class="btn btn-warning"><span class="glyphicon glyphicon-tags" aria-hidden="true" style="padding-right: 7px;"></span><%= book.genre %></button>	
+
 </div>
-<button type="button" class="btn btn-warning"><%= book.genre %></button>
 <% end %>

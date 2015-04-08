@@ -5,7 +5,7 @@
     <a href="<%= book.amazon %>"><%= image_tag book.avatar.url(:medium) %> </a>
   	
   	</div>		  	
-  	<div class="panel panel-default">
+  	<div class="panel panel-default" id="bookpanel">
   		
 	  <!-- Default panel contents -->
 	  <div class="panel-heading">
@@ -39,6 +39,6 @@
 	  </table>
 	  
 	</div>			
+<button type="button" class="btn btn-warning"><span class="glyphicon glyphicon-tags" aria-hidden="true" style="padding-right: 7px;"></span><%= book.genre %></button>
 </div>
-<button type="button" class="btn btn-warning"><%= book.genre %></button>
 <% end %>

@@ -3,6 +3,7 @@ class Book < ActiveRecord::Base
   validates_attachment_content_type :avatar, content_type: /\Aimage\/.*\Z/
   has_many :votes, dependent: :destroy
   
+  
   def vote!(ip)
     unless Vote.recent.exists?(:ip => ip, :book_id => id)
       Vote.create(:ip => ip, :book_id => id)
