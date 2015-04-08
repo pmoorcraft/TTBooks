@@ -30,6 +30,13 @@ class VideosController < ApplicationController
     @videos = Video.all
   end
   
+  def upvote
+   video = Video.find(params[:id])
+   video.votes.create
+
+   redirect_to root_url
+  end
+  
   private
   
   def video_params

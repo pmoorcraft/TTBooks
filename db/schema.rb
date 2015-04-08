@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150314232451) do
+ActiveRecord::Schema.define(version: 20150408133708) do
 
   create_table "Books", force: :cascade do |t|
     t.string   "title"
@@ -46,5 +46,13 @@ ActiveRecord::Schema.define(version: 20150314232451) do
   end
 
   add_index "Videos", ["title"], name: "index_videos_on_title"
+
+  create_table "votes", force: :cascade do |t|
+    t.integer "video_id"
+    t.string  "ip"
+  end
+
+  add_index "votes", ["ip"], name: "index_votes_on_ip"
+  add_index "votes", ["video_id"], name: "index_votes_on_video_id"
 
 end

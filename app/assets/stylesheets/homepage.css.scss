@@ -209,8 +209,15 @@ html {
     border-radius: 17px;
   }
   
+
+  
   .a .button  {
     color: black;
+  }
+  
+  .btn-small  {
+    margin-left: 7px;
+    color: white;
   }
   
   .btn-lg  {
@@ -306,5 +313,7 @@ html {
     }
    }
    
-   
+   .glyphicon  {
+     padding-right: 5px;
+   }
    

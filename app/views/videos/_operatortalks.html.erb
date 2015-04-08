@@ -8,11 +8,21 @@
 	</div>
 	  <div class="panel-body">
 	  	
-	    <p>
+	   
 	    	<iframe width="522" height="349" src="<%= video.url %>"></iframe>
-	    	<br />
-	    	<%= video.description %>
-	    </p>
+	    	
+	    	<table class="table">
+	    	<tr>
+	    	<div class="btn-group btn-group-sm" role="group" style="margin-top: 15px;>
+ 			 <%= button_to '+1', upvote_video_path(video), method: :post, class: 'btn btn-small' %>
+ 			<button class="btn btn-small" disabled style="margin-left: 1px;"><%= pluralize(video.votes.count, "vote") %></button>	
+ 			
+ 			</div>
+ 			</tr>
+ 			
+ 			</table>
+	    	<p><%= video.description %></p>
+	    	
 	    	
 	  </div>
 
@@ -27,7 +37,7 @@
     	</tr>		    	
 	  </table>
 	</div>
-	<button type="button" class="btn btn-warning"><%= video.genre %></button>
+	<button type="button" class="btn btn-warning"><span class="glyphicon glyphicon-tags" aria-hidden="true" style="padding-right: 7px;"></span><%= video.genre %></button>
 	<br/>
 	<br/>
 <% end %>
