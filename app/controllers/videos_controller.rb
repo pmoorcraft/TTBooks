@@ -32,7 +32,7 @@ class VideosController < ApplicationController
   
   def upvotevideo
    video = Video.find(params[:id])
-   video.votes.create
+   video.vote!(request.ip)
 
    redirect_to root_url
   end

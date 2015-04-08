@@ -26,7 +26,7 @@ class BooksController < ApplicationController
   
   def upvotebook
    book = Book.find(params[:id])
-   book.votes.create
+   book.vote!(request.ip)
 
    redirect_to root_url
   end
