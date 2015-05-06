@@ -61,7 +61,9 @@ html {
     padding-top: 2px;
     padding-bottom: 110px;
     padding-rigth: 1px;
-    padding-left: 60px;
+    padding-left: 1px;
+    margin-left: 40px;
+    margin-right: 77px;
   }
   
   .jumbotron a {
@@ -72,8 +74,15 @@ html {
   }
   
   .jumbotron ul  {
-    padding-left: 90px;
+    padding-left: 65px;
+    padding-right: 65px;
     list-style-type: none;
+    text-align: center;
+  }
+  
+  .col-sm-4  {
+    padding-left: 0px;
+    padding-right: 0px;
   }
   
   .navbar-brand-centered {
@@ -121,6 +130,9 @@ html {
   
   h3  {
     font-weight: normal;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
   }
   
   .jumbotron h5  {
