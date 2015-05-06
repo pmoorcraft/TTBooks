@@ -79,4 +79,7 @@ Rails.application.configure do
   config.assets.precompile += %w(*.png *.jpg *.jpeg *.gif *.svg *.ico *.eot *.ttf)
   
   Paperclip.options[:command_path] = "/opt/local/bin/convert"
+  
+  config.active_record.raise_in_transactional_callbacks = true
+  
 end
