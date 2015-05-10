@@ -89,6 +89,7 @@ GEM
     mini_portile (0.6.2)
     minitest (5.5.1)
     multi_json (1.10.1)
+    mysql2 (0.3.18)
     nokogiri (1.6.6.2)
       mini_portile (~> 0.6.0)
     paperclip (4.2.1)
@@ -181,6 +182,7 @@ DEPENDENCIES
   google-webfonts
   jbuilder (= 2.2.3)
   jquery-rails (= 4.0.3)
+  mysql2 (= 0.3.18)
   paperclip (~> 4.2)
   rails (= 4.2.0)
   rails_12factor (= 0.0.2)

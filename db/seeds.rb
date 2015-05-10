@@ -4,3 +4,4 @@
 # Examples:
 #
    # cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
+   books = Book.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
