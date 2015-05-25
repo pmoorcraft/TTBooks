@@ -9,6 +9,8 @@ Rails.application.routes.draw do
   get 'archive' => 'homepage#archive'
   get 'about' => 'homepage#about'
   get 'blog' => 'blogs#index'
+  get 'videofeed' => 'homepage#videofeed'
+  get 'bookfeed' => 'homepage#bookfeed'
 
   
 

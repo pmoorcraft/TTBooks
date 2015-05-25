@@ -62,6 +62,23 @@ class HomepageController < ApplicationController
     @page_title = "Books and Videos for Entrepreneurs and Startups | TTBooks Archive"
   end
   
+  def bookfeed
+    @all_content = Book.all
+    respond_to do |format|
+      format.rss { render :layout => false }
+    end
+  end
+  
+  def videofeed
+    @videos = Video.all
+    respond_to :rss
+  end
+  
+  def bookfeed
+    @books = Book.all
+    respond_to :rss
+  end
+  
   def about
     @page_title = "Books and Videos for Entrepreneurs and Startups | TTBooks About"
   end
