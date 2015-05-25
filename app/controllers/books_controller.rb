@@ -1,5 +1,6 @@
 class BooksController < ApplicationController
   before_filter :authorize
+  before_filter :set_page_title
   
   def new
     @book = Book.new
@@ -31,10 +32,20 @@ class BooksController < ApplicationController
    redirect_to root_url
   end
   
+  def show
+    @book = Book.find(params[:id])
+    @page_title = "Best Startup reads- #{@book.title}"
+  end
+  
+  
   
   private
   
   def book_params
-    params.require(:book).permit(:avatar, :title, :header, :release, :publisher, :tag, :avatar, :amazon, :author, :genre, :alt)
+    params.require(:book).permit(:avatar, :title, :header, :release, :publisher, :tag, :avatar, :amazon, :author, :genre, :free_book, :alt)
+  end
+   
+  def set_page_title
+    @page_title = "Books and Videos for Entrepreneurs and Startups | TTBooks"
   end
 end

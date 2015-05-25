@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+	<head>		
+		<%= stylesheet_link_tag "homepage.css" %>
+		<link href='http://fonts.googleapis.com/css?family=Abel' rel='stylesheet' type='text/css'>
+		 <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Montserrat:700">
+		 <link rel='stylesheet' type='text/css' href='http://fonts.googleapis.com/css?family=Lato&subset=latin,latin-ext'>
+		<title><%= h @page_title %></title>
+	    <meta name="viewport" content="width=device-width, initial-scale=1">
+	    <script src="//hnbutton.appspot.com/static/hn.min.js" async defer></script>
+	</head>
+		
+	<body>
+		
+	  <%= render "shared/navbar" %>
+	  
+	  	<div class="book">
+			<div id="avatar">
+		     <a href="<%= @book.amazon %>"><%= image_tag @book.avatar.url(:medium), alt: @book.alt %> </a> 	
+		  	
+		  	</div>
+		  	<div class="panel panel-default" id="bookpanel">
+		  		
+		  	  
+			  <!-- Default panel contents -->
+			  <div class="panel-heading">
+			  <a href="<%= @book.amazon %>">	<%= @book.title %></a></div>
+			  <div class="panel-body">
+			  	<table class="table">
+			    	  <tr>
+			    	    <div id="buttons">
+		 			    <%= button_to '+1', upvotebook_book_path(@book), method: :post, class: 'btn btn-small' %>
+		 			    <button class="btn btn-small" disabled style="margin-left: 1px; margin-right: 5px;"><%= pluralize(@book.votes.count, "vote") %></button>	 			
+		 			  
+		 			    <!-- Auto-detect URL of current page and title if necessary -->
+					   <a href="http://news.ycombinator.com/submit" class="hn-share-button">Vote on HN</a>
+					 	<script type="text/javascript">
+			  				reddit_url = <%= @book.amazon %>;
+			  				reddit_title = <%= @book.title %>;
+			 				reddit_bgcolor = "FF3";
+			  				reddit_bordercolor = "00F";
+						</script>
+						
+						<script type="text/javascript" src="//www.redditstatic.com/button/button1.js" style="margin-right: 10px;"></script>
+				 	  	<a href="https://twitter.com/share" class="twitter-share-button" data-via="TechTalksBooks" data-related="TechTalksBooks" data-dnt="true" data-align="right" >Tweet</a>
+						<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+						</div>
+				 	  </tr>	
+				 	  
+		 		</table>
+			    <p><%= @book.header %></p>
+			    
+			  </div>			
+			  <!-- Table -->
+			  <table class="table">
+			    <tr>
+					<td>Release date</td>
+					<td><%= @book.release %></td>
+		    	</tr>
+		    	<tr>
+					<td>Author</td>
+					<td><%= @book.author %></td>
+		    	</tr>	
+		    		    	
+			  </table>
+			  
+			</div>			
+		<button type="button" class="btn btn-warning"><span class="glyphicon glyphicon-tags" aria-hidden="true" style="padding-right: 7px;"></span><%= @book.genre %></button>
+		</div>
+
+		
+</body>	
+
+	  <%= render "shared/footer" %>
+	  	  	  
+	
+	
+</html>

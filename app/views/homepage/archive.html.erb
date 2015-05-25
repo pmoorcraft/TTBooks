@@ -4,7 +4,7 @@
 		<%= stylesheet_link_tag "homepage.css" %>
 		<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Montserrat:700">
 		 <link rel='stylesheet' type='text/css' href='http://fonts.googleapis.com/css?family=Lato&subset=latin,latin-ext'>
-		<title>Tech Talks and Books</title>
+		<title><%= h @page_title %></title>
 	    <meta name="viewport" content="width=device-width, initial-scale=1">
 		<style type="text/css">
 			#mc_embed_signup{background:#cccccc; clear:right; margin-top: auto; margin-left: auto; margin-right: auto; font:17px Helvetica,Arial,sans-serif;  width:500px;}
@@ -15,41 +15,76 @@
 	<body>
 		
 	  <%= render "shared/navbar" %>  
-	 <%= render "shared/newsletterform" %>	
+	  
+	 
 	  
 	  <div class="col-md-6">
+	   	<h1 id="sectiontitle">Talks</h1>
+	  </div>
+	   	
+	  <div class="col-md-6">
+	   	<h1 class="sub-header">Books</h1>
+	  </div>
+	   	
+	  <div class="col-md-12">
+	  	<h3 class="sub-header">For Startup founders and operators:</h3>
+	  </div>
 	  	
-	  	<h2 class="sub-header">Latest Talks</h2>	  	
-	  	
-	    <h3 class="sub-header">For Operators:</h3>
+	  <div class="col-md-6"> 	
 		<%= render "videos/oldoperatortalks" %>
+	  </div>
 	 
-	    <h3 class="sub-header">For Investors:</h3>
+	  <div id="oldoperatorbooks" class="col-md-6"> 
+	  	<%= render "books/oldoperatorbooks" %>	
+	  </div>
+	  
+	  <div class="col-md-12">
+	  	<h3 class="sub-header">For Investors:</h3>
+	  </div>
+	  
+	  <div id="oldinvestorbooks" class="col-md-6"> 
 		<%= render "videos/oldinvestortalks" %>
-	  	
+	  </div>
+	  
+	  <div class="col-md-6"> 
+	    <%= render "books/oldinvestorbooks" %>
+	  </div>	
+	  
+	  <div class="col-md-12">
 	  	<h3 class="sub-header">Mixed/ Off-Topic:</h3>
-	  	
-	  	<%= render "videos/oldothertalks" %>
-	  	</div>	  	
+	  </div>	
+	  	  	
+	  <div id="oldotherbooks" class="col-md-6">
+    	<%= render "videos/oldothertalks" %>  	
 	  </div>
 	  	 	  
 	  <div class="col-md-6">
-	  
-	    <h2 class="sub-header">Latest Books</h2>
-	    <h3 class="sub-header">For Operators:</h3>
-	  	  	
-		<%= render "books/oldoperatorbooks" %>	 
-		
-	  	<h3 class="sub-header">For Investors:</h3>			
-	  	<%= render "books/oldinvestorbooks" %>
-	  	
-	  	<h3 class="sub-header">Mixed/ Off-Topic:</h3>
-		<%= render "books/oldotherbooks" %>
-	  	
+		<%= render "books/oldotherbooks" %>	  	
 	  </div>	
-	  	
-		</div>
-	  </div>
+		  	<a href="#" class="back-to-top" style="display: inline;">
+		<p>Top</p>
+		</a>
+		
+		<script>
+		jQuery(document).ready(function() {
+		    var offset = 250;
+		    var duration = 900;
+		    jQuery(window).scroll(function() {
+		        if (jQuery(this).scrollTop() > offset) {
+		            jQuery('.back-to-top').fadeIn(duration);
+		        } else {
+		            jQuery('.back-to-top').fadeOut(duration);
+		        }
+		    });
+		
+		    jQuery('.back-to-top').click(function(event) {
+		        event.preventDefault();
+		        jQuery('html, body').animate({scrollTop: 0}, duration);
+		        return false;
+		    })
+		});
+		</script>
+
 	  
 	  <%= render "shared/footer" %>
 	  	  	  

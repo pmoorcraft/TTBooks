@@ -1,10 +1,9 @@
 class HomepageController < ApplicationController
-  
-  def index
+    before_filter :set_page_title
     
-    
-    @books = Book.all
-    
+    def index
+    @books = Book.all  
+   
     
     @recentbooks = Book.where(release: (25.days.ago..30.days.from_now))
 
@@ -30,6 +29,8 @@ class HomepageController < ApplicationController
     
     @othervideos = @recentvideos.find_all {|i| i.tag == "other" }
     @othervideos = @othervideos.sort_by { |i| - i.votes.count } 
+    
+    @page_title = "Books and Videos for Entrepreneurs and Startups | TTBooks"
   end
   
   
@@ -57,9 +58,18 @@ class HomepageController < ApplicationController
     
     @oldothervideos = @oldvideos.find_all {|i| i.tag == "other" }
     @oldothervideos = @oldothervideos.sort_by { |i| - i.votes.count }
+    
+    @page_title = "Books and Videos for Entrepreneurs and Startups | TTBooks Archive"
   end
   
   def about
-  
+    @page_title = "Books and Videos for Entrepreneurs and Startups | TTBooks About"
+  end
+
+ 
+ private
+ 
+  def set_page_title
+    @page_title = "Books and Videos for Entrepreneurs and Startups | TTBooks"
   end
 end

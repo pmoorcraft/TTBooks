@@ -22,5 +22,5 @@ test:
 
 production:
   <<: *default
-  database: db/development.sqlite3
+  database: db/production.sqlite3
 

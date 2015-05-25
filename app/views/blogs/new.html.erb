@@ -1,0 +1,18 @@
+<%= stylesheet_link_tag "homepage.css" %>
+
+<h1>new blog post</h1>
+<%= form_for @blog, url: {action: "create"}, html: {class: "nifty_form"} do |f| %>
+  <ul>
+  Title
+  <%= f.text_field :title %>
+  </ul>
+  <ul>
+  Body
+<%= f.text_area(:body, size: '100x50') %>
+
+  </ul>
+  <ul>
+
+  <%= f.submit "Create" %>
+  </ul>
+<% end %>

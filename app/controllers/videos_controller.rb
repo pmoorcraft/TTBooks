@@ -1,5 +1,6 @@
 class VideosController < ApplicationController
   before_filter :authorize
+  before_filter :set_page_title
   
   def new
     @video = Video.new
@@ -37,11 +38,19 @@ class VideosController < ApplicationController
    redirect_to root_url
   end
   
+  def show
+    @video = Video.find(params[:id])
+    @page_title = "Best Startup videos- #{@video.title}"
+  end
+  
   private
   
   def video_params
     params.require(:video).permit( :title, :url, :description, :uploaded, :speakers,:tag, :header, :genre)
   end
   
+  def set_page_title
+    @page_title = "Books and Videos for Entrepreneurs and Startups | TTBooks"
+  end
   
 end

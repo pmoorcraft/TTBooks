@@ -8,6 +8,9 @@ Rails.application.routes.draw do
   # Example of regular route:
   get 'archive' => 'homepage#archive'
   get 'about' => 'homepage#about'
+  get 'blog' => 'blogs#index'
+
+  
 
  
  # Example of named route that can be invoked with purchase_url(id: product.id)
@@ -18,7 +21,12 @@ Rails.application.routes.draw do
     member do
       post 'upvotebook'
     end
+    collection do
+      get :search
+    end
   end
+  
+  resources :blogs
   
   resources :videos do
     member do
