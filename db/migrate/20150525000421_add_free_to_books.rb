@@ -1,5 +1,5 @@
 class AddFreeToBooks < ActiveRecord::Migration
   def change
-    add_column :books, :free_book, :string
+    change_column :books, :release, :datetime
   end
 end

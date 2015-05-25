@@ -6,15 +6,17 @@ class HomepageController < ApplicationController
    
     
     @recentbooks = Book.where(release: (25.days.ago..30.days.from_now))
-
-    @operatorbooks = @recentbooks.find_all {|i| i.tag == "operators" }
-    @operatorbooks = @operatorbooks.sort_by { |i| - i.votes.count }
+    @operatorbooks = @recentbooks.find_all {|i| i.tag == "operators" }  
+    @operatorbooks = @operatorbooks.sort_by { |a| [ Date.today - a.release, -a.votes.count] }
+   
+   
     
     @investorbooks = @recentbooks.find_all {|i| i.tag == "investors" }
-    @investorbooks = @investorbooks.sort_by { |i| - i.votes.count }
+    @investorbooks = @investorbooks.sort_by { |a| [ Date.today - a.release, -a.votes.count] }
+    
     
     @otherbooks = @recentbooks.find_all {|i| i.tag == "other" }
-    @otherbooks =  @otherbooks.sort_by { |i| - i.votes.count }
+    @otherbooks =  @otherbooks.sort_by { |a| [ Date.today - a.release, -a.votes.count] }
 
 
     @videos = Video.all  
@@ -22,13 +24,13 @@ class HomepageController < ApplicationController
     
     
     @operatorvideos = @recentvideos.find_all {|i| i.tag == "operators" }
-    @operatorvideos = @operatorvideos.sort_by { |i| - i.votes.count }
+    @operatorvideos = @operatorvideos.sort_by { |a| [ Date.today - a.uploaded, -a.votes.count] }
     
     @investorvideos = @recentvideos.find_all {|i| i.tag == "investors" }
-    @investorvideos = @investorvideos.sort_by { |i| - i.votes.count }
+    @investorvideos = @investorvideos.sort_by { |a| [ Date.today - a.uploaded, -a.votes.count] }
     
     @othervideos = @recentvideos.find_all {|i| i.tag == "other" }
-    @othervideos = @othervideos.sort_by { |i| - i.votes.count } 
+    @othervideos = @othervideos.sort_by { |a| [ Date.today - a.uploaded, -a.votes.count] } 
     
     @page_title = "Books and Videos for Entrepreneurs and Startups | TTBooks"
   end
@@ -38,26 +40,26 @@ class HomepageController < ApplicationController
     @oldbooks = Book.where(release: (1000.days.ago..25.days.ago))
     
     @oldoperatorbooks = @oldbooks.find_all {|i| i.tag == "operators" }
-    @oldoperatorbooks = @oldoperatorbooks.sort_by { |i| - i.votes.count }
+    @oldoperatorbooks = @oldoperatorbooks.sort_by { |a| [ Date.today - a.release, -a.votes.count] }
     
     @oldinvestorbooks = @oldbooks.find_all {|i| i.tag == "investors" }
-     @oldinvestorbooks =  @oldinvestorbooks.sort_by { |i| - i.votes.count }
+     @oldinvestorbooks =  @oldinvestorbooks.sort_by { |a| [ Date.today - a.release, -a.votes.count] }
     
     @oldotherbooks = @oldbooks.find_all {|i| i.tag == "other" }
-     @oldotherbooks =  @oldotherbooks.sort_by { |i| - i.votes.count }
+     @oldotherbooks =  @oldotherbooks.sort_by { |a| [ Date.today - a.release, -a.votes.count] }
     
     
         
     @oldvideos = Video.where(uploaded: (1000.days.ago..25.days.ago))
     
     @oldoperatorvideos = @oldvideos.find_all {|i| i.tag == "operators" }
-     @oldoperatorvideos =  @oldoperatorvideos.sort_by { |i| - i.votes.count }
+     @oldoperatorvideos =  @oldoperatorvideos.sort_by { |a| [ Date.today - a.uploaded, -a.votes.count] }
     
     @oldinvestorvideos = @oldvideos.find_all {|i| i.tag == "investors" }
-    @oldinvestorvideos = @oldinvestorvideos.sort_by { |i| - i.votes.count }
+    @oldinvestorvideos = @oldinvestorvideos.sort_by { |a| [ Date.today - a.uploaded, -a.votes.count] }
     
     @oldothervideos = @oldvideos.find_all {|i| i.tag == "other" }
-    @oldothervideos = @oldothervideos.sort_by { |i| - i.votes.count }
+    @oldothervideos = @oldothervideos.sort_by { |a| [ Date.today - a.uploaded, -a.votes.count] }
     
     @page_title = "Books and Videos for Entrepreneurs and Startups | TTBooks Archive"
   end
