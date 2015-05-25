@@ -1,5 +1,5 @@
 class VideosController < ApplicationController
-  before_filter :authorize
+
   before_filter :set_page_title
   
   def new
