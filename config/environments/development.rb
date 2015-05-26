@@ -40,4 +40,6 @@ Rails.application.configure do
   config.assets.precompile += %w(*.png *.jpg *.jpeg *.gif *.svg *.ico *.eot *.ttf)
   
   Paperclip.options[:command_path] = "/opt/local/bin/convert"
+  
+  
 end
