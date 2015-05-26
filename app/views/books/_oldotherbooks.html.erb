@@ -1,7 +1,9 @@
 <% @oldotherbooks.each do |book| %>
 <div class="book">
 	<div id="avatar">
-   
+    <% if book.imageurl.present? %>		
+    <a href="<%= book.amazon %>"><%= image_tag book.imageurl, alt: book.alt %></a>
+    <% end %>
   	</div>		  	
   	<div class="panel panel-default" id="bookpanel">
   		
