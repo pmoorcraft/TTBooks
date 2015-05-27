@@ -17,20 +17,15 @@
 	  
 	  <div class="container">
 	  	<% @blogs.each do |blog| %>
-	  <h1><a><%= link_to blog.title, controller: "blogs", action: "show", id: blog %></a></h1>
-	  
-	  <p id="blogposttext" style="font-size:  18px;"> <%= simple_format blog.body.html_safe %>
-	  	</p>
+	  	
+	      <h1><a><%= link_to blog.title, controller: "blogs", action: "show", id: blog %></a></h1>
+          <p id="blogposttext" style="font-size:  18px;"> <%= simple_format blog.body.html_safe %></p>
+	  	
 	  	<br />
 	  	<br />
 	  	<% end %>
 	  </div>
 	</body>	
 
-		
-
-	  <%= render "shared/footer" %>
-	  	  	  
-	
-	
+	  <%= render "shared/footer" %>	
 </html>
