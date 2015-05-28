@@ -179,11 +179,7 @@ html {
         margin-left: -80px;
         color: white;
     }
-  
-  iframe  {
-    border: 2px solid black;
-  }
-  
+
   
   h1  {
     text-align: center;
@@ -333,7 +329,13 @@ html {
 
   
   .sub-header {
-    align: left;
+    color: white;
+    background-color: black;
+    margin-left: 400px;
+    margin-right: 400px;
+    border-radius: 5px;
+    padding-bottom: 10px;
+    padding-top: 10px;
   }
   
   
@@ -350,7 +352,7 @@ html {
     
     padding-top: 15px;
     padding-bottom: 15px;
-    padding-right: 40px;
+    padding-right: 5px;
     padding-left: 5px;
     width: 605px;
     border-right: 3px double black;
@@ -366,6 +368,7 @@ html {
       padding-left: 5px;
       margin-left: 10px;
       margin-right: auto; 
+      border-left: double;
       
   }
   
