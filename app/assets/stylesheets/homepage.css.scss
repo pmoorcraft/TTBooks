@@ -99,9 +99,10 @@ html {
     padding-bottom: 67px;
     padding-rigth: 1px;
     padding-left: 1px;
-    margin-left: 40px;
-    margin-right: 40px;
-    border-radius: 5px;
+    margin-left: 44px;
+    margin-right: 44px;
+    border-radius-bottom-left: 5px;
+    border-radius-bottom-right: 5px;
   }
   
   .jumbotron a {
@@ -459,10 +460,12 @@ html {
   
   .page-header {
     margin-top: 0px;
+    margin-bottom: 0px;
     margin-left: 60px;
     margin-right: 60px;    
     colour: black;
-    border-radius: 5px;  
+    border-radius-top-right: 5px;
+    border-radius-top-left: 5px;  
     background-image: url(http://i.imgur.com/lhYyWkK.jpg);
     -webkit-filter: contrast(1);
     padding-top: 30px;
