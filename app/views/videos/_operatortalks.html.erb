@@ -1,5 +1,6 @@
 <% @operatorvideos.each do |video| %>
    <div class="video">
+   <div id="avatar"><iframe width="522" height="349" src="<%= video.url %>" allowfullscreen></iframe></div>
    <div class="panel panel-default">	
 	<div class="panel-heading">
 	
@@ -8,7 +9,7 @@
 	</div>
 	  <div class="panel-body">
 	  	   
-	    	<iframe width="522" height="349" src="<%= video.url %>" allowfullscreen></iframe>
+	    	
 	    	<table class="table">
 	    	  <tr>
 	    	  

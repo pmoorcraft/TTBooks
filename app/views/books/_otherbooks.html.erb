@@ -1,6 +1,6 @@
 <% @otherbooks.each do |book| %>
 <div class="book">
-	<div id="avatar">
+	<div id="avatar" style="margin-bottom: 15px;">
   	<% if book.imageurl.present? %>		
     <a href="<%= book.amazon %>"><%= image_tag book.imageurl, alt: book.alt %></a>
     <% end %>
