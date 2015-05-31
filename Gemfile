@@ -15,7 +15,7 @@ gem "paperclip", "~> 4.2"
 gem 'sqlite3',     '1.3.9'
 gem 'google-webfonts'
 gem 'mysql2',  '0.3.18'
-
+gem 'httparty'
 
 
 
