@@ -11,29 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150526213237) do
-
-  create_table "Books", force: :cascade do |t|
-    t.string   "title"
-    t.string   "amazon"
-    t.string   "author"
-    t.string   "publisher"
-    t.date     "release"
-    t.datetime "created_at",          null: false
-    t.datetime "updated_at",          null: false
-    t.string   "avatar_file_name"
-    t.string   "avatar_content_type"
-    t.integer  "avatar_file_size"
-    t.datetime "avatar_updated_at"
-    t.string   "tag"
-    t.string   "header"
-    t.string   "genre"
-    t.string   "alt"
-    t.string   "free_book"
-    t.string   "imageurl"
-  end
-
-  add_index "Books", ["title"], name: "index_books_on_title"
+ActiveRecord::Schema.define(version: 20150531143750) do
 
   create_table "Videos", force: :cascade do |t|
     t.string   "title"
@@ -56,6 +34,28 @@ ActiveRecord::Schema.define(version: 20150526213237) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
+
+  create_table "books", force: :cascade do |t|
+    t.string   "title"
+    t.string   "amazon"
+    t.string   "author"
+    t.string   "publisher"
+    t.date     "release"
+    t.datetime "created_at",          null: false
+    t.datetime "updated_at",          null: false
+    t.string   "avatar_file_name"
+    t.string   "avatar_content_type"
+    t.integer  "avatar_file_size"
+    t.datetime "avatar_updated_at"
+    t.string   "tag"
+    t.text     "header"
+    t.string   "genre"
+    t.string   "alt"
+    t.string   "free_book"
+    t.string   "imageurl"
+  end
+
+  add_index "books", ["title"], name: "index_books_on_title"
 
   create_table "votes", force: :cascade do |t|
     t.integer  "video_id"

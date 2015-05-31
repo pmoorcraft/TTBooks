@@ -1,21 +1,8 @@
-<!DOCTYPE html>
-<html>
-	<head>		
-		<%= stylesheet_link_tag "homepage.css" %>
-		<link href='http://fonts.googleapis.com/css?family=Abel' rel='stylesheet' type='text/css'>
-		 <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Montserrat:700">
-		 <link rel='stylesheet' type='text/css' href='http://fonts.googleapis.com/css?family=Lato&subset=latin,latin-ext'>
-		<title><%= h @page_title %></title>
-	    <meta name="viewport" content="width=device-width, initial-scale=1">
-	    <script src="//hnbutton.appspot.com/static/hn.min.js" async defer></script>
-	</head>
-		
-	<body>
-		
+
 	  <%= render "shared/navbar" %>
 	  
-	  <div class="container">	  	
-	  <h1><a><%= @blog.title %></a></h1>
+	  <div class="container" id="blogcontainer">	  	
+	  <h1><%= @blog.title %></h1>
 	  
 	  <p id="blogposttext" style="font-size:  18px;"> <%= simple_format @blog.body.html_safe %>
 	  	</p>
@@ -41,14 +28,18 @@
 				 	  </tr>	
 				 	  
 		 		</table>
-
+		<div id="disqus_thread"></div>
+			<script type="text/javascript">
+		    /* * * CONFIGURATION VARIABLES * * */
+		    var disqus_shortname = 'ttbooks';
+		    
+		    /* * * DON'T EDIT BELOW THIS LINE * * */
+		    (function() {
+		        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+		        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+		        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+		    })();
+		</script>
+		<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
 	  </div>
-	</body>	
-
-		
-
 	  <%= render "shared/footer" %>
-	  	  	  
-	
-	
-</html>

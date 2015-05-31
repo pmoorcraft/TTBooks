@@ -66,6 +66,16 @@ html {
     margin-bottom: 80px;
   }
   
+  #blogcontainer  {
+    background-color: white;
+    margin-right: 100px;
+    margin-left: 100px;
+    width: auto;
+  }
+  
+  #blogtitle h1:link  {
+    color: black;
+  }
 
   
   #blogposttext  {
@@ -349,6 +359,8 @@ html {
     border-radius: 5px;
     padding-bottom: 15px;
     padding-top: 15px;
+    margin-bottom: 80px;
+    margin-top: 40px;
   }
   
   

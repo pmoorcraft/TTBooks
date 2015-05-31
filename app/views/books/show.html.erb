@@ -1,22 +1,11 @@
-<!DOCTYPE html>
-<html>
-	<head>		
-		<%= stylesheet_link_tag "homepage.css" %>
-		<link href='http://fonts.googleapis.com/css?family=Abel' rel='stylesheet' type='text/css'>
-		 <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Montserrat:700">
-		 <link rel='stylesheet' type='text/css' href='http://fonts.googleapis.com/css?family=Lato&subset=latin,latin-ext'>
-		<title><%= h @page_title %></title>
-	    <meta name="viewport" content="width=device-width, initial-scale=1">
-	    <script src="//hnbutton.appspot.com/static/hn.min.js" async defer></script>
-	</head>
-		
-	<body>
-		
+	
 	  <%= render "shared/navbar" %>
 	  
 	  	<div class="book">
 			<div id="avatar">
-		     
+		     <% if @book.imageurl.present? %>	
+			    <a href="<%= @book.amazon %>"><%= image_tag @book.imageurl, alt: @book.alt %></a>
+			    <% end %>
 		  	</div>
 		  	<div class="panel panel-default" id="bookpanel">
 		  		
@@ -69,13 +58,21 @@
 			  
 			</div>			
 		<button type="button" class="btn btn-warning"><span class="glyphicon glyphicon-tags" aria-hidden="true" style="padding-right: 7px;"></span><%= @book.genre %></button>
-		</div>
-
+				<div id="disqus_thread"></div>
+			<script type="text/javascript">
+		    /* * * CONFIGURATION VARIABLES * * */
+		    var disqus_shortname = 'ttbooks';
+		    
+		    /* * * DON'T EDIT BELOW THIS LINE * * */
+		    (function() {
+		        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+		        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+		        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+		    })();
+		</script>
+		<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+	  </div>
 		
-</body>	
-
+		</div>
 	  <%= render "shared/footer" %>
-	  	  	  
-	
-	
-</html>
+

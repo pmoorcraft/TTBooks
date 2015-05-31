@@ -1,31 +1,15 @@
-<!DOCTYPE html>
-<html>
-	<head>		
-		<%= stylesheet_link_tag "homepage.css" %>
-		<link href='http://fonts.googleapis.com/css?family=Abel' rel='stylesheet' type='text/css'>
-		 <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Montserrat:700">
-		 <link rel='stylesheet' type='text/css' href='http://fonts.googleapis.com/css?family=Lato&subset=latin,latin-ext'>
-		<title><%= h @page_title %></title>
-	    <meta name="viewport" content="width=device-width, initial-scale=1">
-		<meta name="description” content="The official TTBooks blog- Here you will find articles about videos and books for tech startup entrepreneurs and investors”>
-			 
-	</head>
-		
-	<body>
-		
+	
 	  <%= render "shared/navbar" %>
 	  
-	  <div class="container">
+	  <div class="container" id="blogcontainer">
 	  	<% @blogs.each do |blog| %>
 	  	
-	      <h1><a><%= link_to blog.title, controller: "blogs", action: "show", id: blog %></a></h1>
+	      <h1 id="blogtitle"><%= link_to blog.title, controller: "blogs", action: "show", id: blog %></h1>
           <p id="blogposttext" style="font-size:  18px;"> <%= simple_format blog.body.html_safe %></p>
 	  	
 	  	<br />
 	  	<br />
 	  	<% end %>
 	  </div>
-	</body>	
 
 	  <%= render "shared/footer" %>	
-</html>
