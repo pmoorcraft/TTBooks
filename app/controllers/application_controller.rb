@@ -8,7 +8,7 @@ class ApplicationController < ActionController::Base
   private
 
   def set_page_title
-    @page_title = "Books and Videos for Entrepreneurs and Startups | TTBooks"
+    @page_title = " TTBook | Books and Videos for Entrepreneurs and Startups"
   end
   
   

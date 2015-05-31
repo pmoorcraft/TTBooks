@@ -40,7 +40,7 @@ class VideosController < ApplicationController
   
   def show
     @video = Video.find(params[:id])
-    @page_title = "Best Startup videos- #{@video.title}"
+    @page_title = "#{@video.title} | TTBooks"
   end
   
   private
@@ -50,7 +50,7 @@ class VideosController < ApplicationController
   end
   
   def set_page_title
-    @page_title = "Books and Videos for Entrepreneurs and Startups | TTBooks"
+    @page_title = "TTBooks | Books and Videos for Entrepreneurs and Startups"
   end
   
 end

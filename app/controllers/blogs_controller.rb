@@ -16,12 +16,12 @@ class BlogsController < ApplicationController
   end
   def index
     @blogs = Blog.all
-    @page_title = "The latest news on startup talks and videos | TTBooks Blog"
+    @page_title = "TTBooks Blog | Books and Videos for Entrepreneurs and Startups"
   end
   
   def show
     @blog = Blog.find(params[:id])
-    @page_title = "TTBooks blog- #{@blog.title}"
+    @page_title = "#{@blog.title} | TTBooks blog"
   end
   
   private
@@ -30,6 +30,6 @@ class BlogsController < ApplicationController
   end
   
   def set_page_title
-   @page_title = "The latest news on startup talks and videos | TTBooks Blog"
+   @page_title = "TTBooks | Books and Videos for Entrepreneurs and Startups"
   end
 end

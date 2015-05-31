@@ -34,7 +34,7 @@ class BooksController < ApplicationController
   
   def show
     @book = Book.find(params[:id])
-    @page_title = "Best Startup reads- #{@book.title}"
+    @page_title = "#{@book.title} | TTBooks"
   end
   
   
@@ -46,6 +46,6 @@ class BooksController < ApplicationController
   end
    
   def set_page_title
-    @page_title = "Books and Videos for Entrepreneurs and Startups | TTBooks"
+    @page_title = "TTBooks | Books and Videos for Entrepreneurs and Startups"
   end
 end

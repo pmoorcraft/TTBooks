@@ -32,7 +32,7 @@ class HomepageController < ApplicationController
     @othervideos = @recentvideos.find_all {|i| i.tag == "other" }
     @othervideos = @othervideos.sort_by { |a| [ Date.today - a.uploaded, -a.votes.count] } 
     
-    @page_title = "Books and Videos for Entrepreneurs and Startups | TTBooks"
+    @page_title = "TTBooks | Books and Videos for Entrepreneurs and Startups"
   end
   
   
@@ -61,7 +61,7 @@ class HomepageController < ApplicationController
     @oldothervideos = @oldvideos.find_all {|i| i.tag == "other" }
     @oldothervideos = @oldothervideos.sort_by { |a| [ Date.today - a.uploaded, -a.votes.count] }
     
-    @page_title = "Books and Videos for Entrepreneurs and Startups | TTBooks Archive"
+    @page_title = "TTBooks Archive | Books and Videos for Entrepreneurs and Startups"
   end
   
   def bookfeed
@@ -82,13 +82,13 @@ class HomepageController < ApplicationController
   end
   
   def about
-    @page_title = "Books and Videos for Entrepreneurs and Startups | TTBooks About"
+    @page_title = "TTBooks About | Books and Videos for Entrepreneurs and Startups"
   end
 
  
  private
  
   def set_page_title
-    @page_title = "Books and Videos for Entrepreneurs and Startups | TTBooks"
+    @page_title = "TTBooks | Books and Videos for Entrepreneurs and Startups"
   end
 end
