@@ -10,7 +10,7 @@ class VideosController < ApplicationController
        
     @video = Video.create(video_params)
     if @video.save
-      redirect_to root_url
+      redirect_to @video
     else
      redirect_to root_url
       flash[:notice] = "Error"

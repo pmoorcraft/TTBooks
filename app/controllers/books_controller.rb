@@ -9,7 +9,7 @@ class BooksController < ApplicationController
   def create
     @book = Book.new(book_params) 
     if @book.save
-      redirect_to root_url
+      redirect_to @book
     else
       redirect_to root_url
       flash[:notice] = "Error"
