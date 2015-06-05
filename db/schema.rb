@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150531143750) do
+ActiveRecord::Schema.define(version: 20150605182237) do
 
   create_table "Videos", force: :cascade do |t|
     t.string   "title"
@@ -24,9 +24,11 @@ ActiveRecord::Schema.define(version: 20150531143750) do
     t.string   "tag"
     t.string   "header"
     t.string   "genre"
+    t.string   "image_url"
   end
 
   add_index "Videos", ["title"], name: "index_videos_on_title"
+  add_index "Videos", ["uploaded"], name: "index_videos_on_uploaded"
 
   create_table "blogs", force: :cascade do |t|
     t.string   "title"
@@ -55,6 +57,7 @@ ActiveRecord::Schema.define(version: 20150531143750) do
     t.string   "imageurl"
   end
 
+  add_index "books", ["release"], name: "index_books_on_release"
   add_index "books", ["title"], name: "index_books_on_title"
 
   create_table "votes", force: :cascade do |t|

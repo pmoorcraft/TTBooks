@@ -41,12 +41,13 @@ class VideosController < ApplicationController
   def show
     @video = Video.find(params[:id])
     @page_title = "#{@video.title} | TTBooks"
+    fresh_when @video
   end
   
   private
   
   def video_params
-    params.require(:video).permit( :title, :url, :description, :uploaded, :speakers,:tag, :header, :genre)
+    params.require(:video).permit( :title, :url, :description, :uploaded, :speakers,:tag, :header, :genre, :image_url)
   end
   
   def set_page_title

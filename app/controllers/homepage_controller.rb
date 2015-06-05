@@ -33,6 +33,7 @@ class HomepageController < ApplicationController
     @othervideos = @othervideos.sort_by { |a| [ Date.today - a.uploaded, -a.votes.count] } 
     
     @page_title = "TTBooks | Books and Videos for Entrepreneurs and Startups"
+
   end
   
   
@@ -62,6 +63,7 @@ class HomepageController < ApplicationController
     @oldothervideos = @oldothervideos.sort_by { |a| [ Date.today - a.uploaded, -a.votes.count] }
     
     @page_title = "TTBooks Archive | Books and Videos for Entrepreneurs and Startups"
+
   end
   
   def bookfeed

@@ -35,6 +35,7 @@ class BooksController < ApplicationController
   def show
     @book = Book.find(params[:id])
     @page_title = "#{@book.title} | TTBooks"
+    fresh_when @book
   end
   
   
