@@ -70,10 +70,15 @@ html {
     background-color: white;
     margin-right: 100px;
     margin-left: 100px;
+    margin-bottom: 70px;
     width: auto;
   }
   
-  #blogtitle h1:link  {
+  #blogcontainer a:link  {
+    color: black;
+  }
+  
+  #blogcontainer a:visited  {
     color: black;
   }
 

@@ -15,7 +15,7 @@ class BlogsController < ApplicationController
     end
   end
   def index
-    @blogs = Blog.all
+    @blogs = Blog.all.order("created_at DESC")
     @page_title = "TTBooks Blog | Books and Videos for Entrepreneurs and Startups"
   end
   
