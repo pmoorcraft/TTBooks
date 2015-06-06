@@ -2,35 +2,28 @@ class HomepageController < ApplicationController
     before_filter :set_page_title
     
     def index
+      
     @books = Book.all  
-   
-    
-    @recentbooks = Book.where(release: (25.days.ago..30.days.from_now))
-    @operatorbooks = @recentbooks.find_all {|i| i.tag == "operators" }  
-    @operatorbooks = @operatorbooks.sort_by { |a| [ Date.today - a.release, -a.votes.count] }
-   
-   
-    
-    @investorbooks = @recentbooks.find_all {|i| i.tag == "investors" }
-    @investorbooks = @investorbooks.sort_by { |a| [ Date.today - a.release, -a.votes.count] }
-    
-    
-    @otherbooks = @recentbooks.find_all {|i| i.tag == "other" }
-    @otherbooks =  @otherbooks.sort_by { |a| [ Date.today - a.release, -a.votes.count] }
-
-
     @videos = Video.all  
     @recentvideos = Video.where(uploaded: (25.days.ago..Time.now))
+  
+    @operatorvideos = @recentvideos.find_all {|i| i.tag == "operators" }      
+    @recentbooks = Book.where(release: (25.days.ago..30.days.from_now))
+    @operatorbooks = @recentbooks.find_all {|i| i.tag == "operators" }  
+   
+    @operator_feed = (@operatorbooks + @operatorvideos).sort_by { |a| Time.now - a.created_at}
+
+   
     
-    
-    @operatorvideos = @recentvideos.find_all {|i| i.tag == "operators" }
-    @operatorvideos = @operatorvideos.sort_by { |a| [ Date.today - a.uploaded, -a.votes.count] }
-    
+    @investorbooks = @recentbooks.find_all {|i| i.tag == "investors" }   
     @investorvideos = @recentvideos.find_all {|i| i.tag == "investors" }
-    @investorvideos = @investorvideos.sort_by { |a| [ Date.today - a.uploaded, -a.votes.count] }
+    @investor_feed = (@investorbooks + @investorvideos).sort_by { |a| Time.now - a.created_at}
+
     
+    @otherbooks = @recentbooks.find_all {|i| i.tag == "other" }
     @othervideos = @recentvideos.find_all {|i| i.tag == "other" }
-    @othervideos = @othervideos.sort_by { |a| [ Date.today - a.uploaded, -a.votes.count] } 
+    @other_feed = (@otherbooks + @othervideos).sort_by { |a| Time.now - a.created_at}
+
     
     @page_title = "TTBooks | Books and Videos for Entrepreneurs and Startups"
 
@@ -39,28 +32,26 @@ class HomepageController < ApplicationController
   
   def archive
     @oldbooks = Book.where(release: (1000.days.ago..25.days.ago))
-    
-    @oldoperatorbooks = @oldbooks.find_all {|i| i.tag == "operators" }
-    @oldoperatorbooks = @oldoperatorbooks.sort_by { |a| [ Date.today - a.release, -a.votes.count] }
-    
-    @oldinvestorbooks = @oldbooks.find_all {|i| i.tag == "investors" }
-     @oldinvestorbooks =  @oldinvestorbooks.sort_by { |a| [ Date.today - a.release, -a.votes.count] }
-    
-    @oldotherbooks = @oldbooks.find_all {|i| i.tag == "other" }
-     @oldotherbooks =  @oldotherbooks.sort_by { |a| [ Date.today - a.release, -a.votes.count] }
-    
-    
-        
     @oldvideos = Video.where(uploaded: (1000.days.ago..25.days.ago))
     
+    
+    @oldoperatorbooks = @oldbooks.find_all {|i| i.tag == "operators" }    
     @oldoperatorvideos = @oldvideos.find_all {|i| i.tag == "operators" }
-     @oldoperatorvideos =  @oldoperatorvideos.sort_by { |a| [ Date.today - a.uploaded, -a.votes.count] }
+    @oldoperator_feed = (@oldoperatorbooks + @oldoperatorvideos).sort_by { |a| Time.now - a.created_at}
+    @oldoperator_feed = @oldoperator_feed.take(16)
     
+    
+    
+    @oldinvestorbooks = @oldbooks.find_all {|i| i.tag == "investors" }       
     @oldinvestorvideos = @oldvideos.find_all {|i| i.tag == "investors" }
-    @oldinvestorvideos = @oldinvestorvideos.sort_by { |a| [ Date.today - a.uploaded, -a.votes.count] }
-    
+    @oldinvestor_feed = (@oldinvestorbooks + @oldinvestorvideos).sort_by { |a| Time.now - a.created_at}
+    @oldinvestor_feed =  @oldinvestor_feed.take(16)
+     
+     
+    @oldotherbooks = @oldbooks.find_all {|i| i.tag == "other" }
     @oldothervideos = @oldvideos.find_all {|i| i.tag == "other" }
-    @oldothervideos = @oldothervideos.sort_by { |a| [ Date.today - a.uploaded, -a.votes.count] }
+    @oldother_feed = (@oldotherbooks + @oldothervideos).sort_by { |a| Time.now - a.created_at}
+    @oldother_feed =  @oldother_feed.take(16)
     
     @page_title = "TTBooks Archive | Books and Videos for Entrepreneurs and Startups"
 

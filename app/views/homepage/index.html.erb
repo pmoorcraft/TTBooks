@@ -6,76 +6,42 @@
 	  <%= render "shared/newsletterform" %>
 	  
 	  	<div class="col-md-12">
-	  	<h3 class="sub-header">For Startup founders and operators:</h3>
+	  		<h3 class="sub-header">For Startup founders and operators:</h3>
 	  	</div>
-
-	    <div class="col-md-6">
-	    <%= render "videos/operatortalks" %>
-	  	</div>
-	  	
-	  	<div class="col-md-6">
-	    <%= render "books/operatorbooks" %>
-	 	<div id= "avatar">
-	 	<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-		<!-- TTBooks- 1 -->
-		<ins class="adsbygoogle"
-		     style="display:inline-block;width:336px;height:280px"
-		     data-ad-client="ca-pub-3319618738478027"
-		     data-ad-slot="7413267829"></ins>
-		<script>
-		(adsbygoogle = window.adsbygoogle || []).push({});
-		</script>	
-		</div>
-	 	
+		
+		<% cache do %>
+ 	
+	  	<div class="col-md-12">
+	    	<%= render "books/operators" %>
 	 	</div>
 	 	
 		
 	 	<div class="col-md-12" id="Invheader">
-	 	<h3 class="sub-header">For Investors:</h3>	
+	 		<h3 class="sub-header">For Investors:</h3>	
 	 	</div>
-	 	
-	 	<div class="col-md-6">
-		<div id="invvideos"></div>   	
-	  	<%= render "videos/investortalks" %>
-	  	</div>
-	  	
-	  	<div class="col-md-6">
-	 	<div id="invbooks"></div>         
-	    <%= render "books/investorbooks" %>	
-	    <div class="book">
-		<div id="avatar">
-	    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-		<!-- TTBooks-Test -->
-		<ins class="adsbygoogle"
-		     style="display:inline-block;width:300px;height:250px"
-		     data-ad-client="ca-pub-3319618738478027"
-		     data-ad-slot="2561252622"></ins>
-		<script>
-		(adsbygoogle = window.adsbygoogle || []).push({});
-		</script>
-	  	</div>
-	  	</div>
-	  	</div>
-	  	<div class="col-md-12" id="Othheader">
-	 	<h3 class="sub-header">Mixed/ Off-Topic:</h3>	
-	 	</div>
-	  	
-	  	<div class="col-md-6">	
-	  	<div id="othertalks"></div> 
-	  	<%= render "videos/othertalks" %>	
-		 <a class="btn btn-default btn-block" href="/archive" style="margin-bottom: 50px;"> View More </a>
-	    </div>	  	
-	  
 
-	 	<div class="col-md-6">			
-	  	<div id="otherbooks"></div> 
 	  	
+	  	<div class="col-md-12">
+	 	
+	 	<div id="invbooks"></div>         
+	    
+	    	<%= render "books/investors" %>	
+	   
 	  	
-	  	<%= render "books/otherbooks" %>			
+	  	</div>
 	  	
-	  	
-		<a class="btn btn-default btn-block" href="/archive" style="margin-bottom: 50px;"> View More </a>
+	  	<div class="col-md-12" id="Othheader">
+	 		<h3 class="sub-header">Mixed/ Off-Topic:</h3>	
 	 	</div>
+
+	 	
+	 	<div class="col-md-12">			
+	  	
+	  	<div id="otherbooks"></div> 
+	  		<%= render "books/others" %>	
+	  	<a class="btn btn-default btn-block" href="/archive" style="margin-bottom: 70px;"> View More </a>	  		  			
+	  	<% end %>
+		</div>
 	  
 	  	<a href="#" class="back-to-top" style="display: inline;">
 		<i class="fa fa-arrow-up fa-2x"></i>

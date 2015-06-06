@@ -1,7 +1,7 @@
 	
 	  <%= render "shared/navbar" %>
 	  
-	  
+	  <% cache do %>
 	  	<% @blogs.each do |blog| %>
 	  	<div class="container" id="blogcontainer">
 	      <h1 id="blogtitle"><%= link_to blog.title, controller: "blogs", action: "show", id: blog %></h1>
@@ -11,5 +11,5 @@
 	  	<br />
 	  	</div>
 	  <% end %>
-
+	<% end %>
 	  <%= render "shared/footer" %>	

@@ -1,51 +1,38 @@
 	
-	  <%= render "shared/navbar" %>  
-	  
-	 
-	  
-	  <div class="col-md-6">
-	   	<h1 id="sectiontitle">Talks</h1>
-	  </div>
-	   	
-	  <div class="col-md-6">
-	   	<h1 id="sectiontitle">Books</h1>
-	  </div>
-	   	
+	  <%= render "shared/navbar" %>    	
 	  <div class="col-md-12">
 	  	<h3 class="sub-header">For Startup founders and operators:</h3>
 	  </div>
-	  	
-	  <div class="col-md-6"> 	
-		<%= render "videos/oldoperatortalks" %>
-	  </div>
+
 	 
-	  <div id="oldoperatorbooks" class="col-md-6"> 
+	 <% cache(cache_key_for_books) do %>	
+	  <div id="oldoperatorbooks" class="col-md-12"> 
 	  	<%= render "books/oldoperatorbooks" %>	
-	  </div>
-	  
+	  </div>	 
+	 <% end %>	 
 	  <div class="col-md-12">
 	  	<h3 class="sub-header">For Investors:</h3>
 	  </div>
-	  
-	  <div id="oldinvestorbooks" class="col-md-6"> 
-		<%= render "videos/oldinvestortalks" %>
-	  </div>
-	  
-	  <div class="col-md-6"> 
+	 
+
+	 
+	 <% cache(cache_key_for_books) do %>
+	  <div class="col-md-12"> 
 	    <%= render "books/oldinvestorbooks" %>
 	  </div>	
+	 <% end %>
+	 
 	  
 	  <div class="col-md-12">
 	  	<h3 class="sub-header">Mixed/ Off-Topic:</h3>
 	  </div>	
-	  	  	
-	  <div id="oldotherbooks" class="col-md-6">
-    	<%= render "videos/oldothertalks" %>  	
-	  </div>
-	  	 	  
-	  <div class="col-md-6">
+	 
+
+	  <% cache(cache_key_for_books) do %>	 	  
+	  <div class="col-md-12" style= "margin-bottom: 120px;">
 		<%= render "books/oldotherbooks" %>	  	
-	  </div>	
+	  </div>
+	  <% end %>	
 		  	<a href="#" class="back-to-top" style="display: inline;">
 		<i class="fa fa-arrow-up fa-2x"></i>
 		</a>

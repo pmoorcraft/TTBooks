@@ -1,37 +1,58 @@
 <% @oldothervideos.each do |video| %>
-  <div class="video">
-  	<div id="avatar"><iframe width="475" height="310" src="<%= video.url %>" allowfullscreen></iframe></div>
-  <div class="panel panel-default">	
-	<div class="panel-heading">
+    <div class="container" id="content-row" style=" border-radius: 5px; background-color: white; margin-bottom: 20px;">
+	  
+		  <div class="toggler" onclick="toggleText('<%= video.id %>');" style="cursor:pointer; position: relative">
+		  
+			  <!-- Content before clicking goes here -->
+			 
+			  <div class="thumbnail1" style="float: left; style="margin-left: 20px; margin-right: 20px;">
 	
-	<%= link_to video.title, video %>
+			  	<img  src="http://i1.ytimg.com/vi/<%= video.image_url %>/hqdefault.jpg" width="110" heigth="63" style="margin-left: 10px; margin-right: 20px; margin-bottom: 15px;">
+	
+			  </div>
+			  
+			  <div style="float:right;">
+			  	<%= video.uploaded %>
+			  </div>
+			  
+			  <div>
+			  <h2><%= video.title%></h2>
+			  			  
+			  </div>
+			  
+			  <div style="float: right;">
+			  <button type="button" class="btn btn-warning"><span class="glyphicon glyphicon-tags" aria-hidden="true" style="padding-right: 7px;"></span><%= video.genre %></button>
+			  </div>
+			  
+			  <!-- Content before clicking ends here -->
+			  <div id="<%= video.id %>" style="display:none;">
+			  <!-- Content after clicking goes here -->  
+				<div class= "container" style="margin-top: 120px; ">
+					<div class= "col-md-6" style="  margin-right: 10px; margin-left: 10px; margin-bottom: 10px; width: auto; float: left;">
+				     <iframe width="500" height="315" style="border-radius: 5px; margin-left:auto; margin-right: auto; margin-bottom: auto; "src="<%= video.url %>" frameborder="0" "allowfullscreen"></iframe> 
+				  					    </div>
+				     <div class="col-md-6">
+				     	<div class="container" style="float:left; width:100%;">
+				     	<p><%= video.description %></p>
+				     	<button class="btn btn-small" disabled style="margin-left: 1px; margin-bottom:auto; float: right;"><%= pluralize(video.votes.count, "vote") %></button>
+				     	<%= button_to '+1', upvotevideo_video_path(video), method: :post, class: 'btn btn-small', style: "margin-left: 1px; float: right;" %>
+			 	    	
+				     <br style="clear:both;"/>
+				     </div>
+					</div>
+					</div>
+			</div>
+			   
+			   <!-- Content after clicking ends here -->
+		   
+		</div>
+	</div>
+		
+		<script>
+		function toggleText(id) {
+	    var theText = document.getElementById(id);
+	 	 (theText.style.display=='block') ? theText.style.display='none' : theText.style.display='block' ;  
+		}
+		</script>
+	<% end %>
 
-	</div>
-	  <div class="panel-body">
-	  	   
-	    	
-	    	
-	    	<table class="table">
-	    	  <tr>
-	    	    <%= button_to '+1', upvotevideo_video_path(video), method: :post, class: 'btn btn-small' %>
- 			    <button class="btn btn-small" disabled style="margin-left: 1px;"><%= pluralize(video.votes.count, "vote") %></button>	 			
- 			  
- 			  </tr>	
- 			</table> 			
-	    	<p><%= video.description %></p>	    		    	
-	  </div>
-
-	  <table class="table">
-	    <tr>
-			<td>Date</td>
-			<td><%= video.uploaded %></td>
-    	</tr>
-    	<tr>
-			<td>Speakers</td>
-			<td><%= video.speakers %></td>
-    	</tr>		    	
-	  </table>
-	</div>
-	<button type="button" class="btn btn-warning"><span class="glyphicon glyphicon-tags" aria-hidden="true" style="padding-right: 7px;"></span><%= video.genre %></button>
-	</div>
-<% end %>

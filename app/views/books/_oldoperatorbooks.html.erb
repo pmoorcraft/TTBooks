@@ -1,45 +1,120 @@
-<% @oldoperatorbooks.each do |book| %>
-<div class="book">
-	<div id="avatar" style="margin-bottom: 15px;">
-  	<% if book.imageurl.present? %>		
-    <a href="<%= book.amazon %>"><%= image_tag book.imageurl, alt: book.alt %></a>
-    <% end %>
-  	</div>		  	
-  	<div class="panel panel-default" id="bookpanel">
-  		
-	  <!-- Default panel contents -->
-	  <div class="panel-heading">
-	  <a><%= link_to book.title, book %></a></div>
-	  	
-	  <div class="panel-body">
-	  	<table class="table">
-	    	  <tr>
-	    	  
- 			    <%= button_to '+1', upvotebook_book_path(book), method: :post, class: 'btn btn-small' %>
- 			    <button class="btn btn-small" disabled style="margin-left: 1px;"><%= pluralize(book.votes.count, "vote") %></button>	 			
- 			   <% if book.free_book == "true" %>
-		     <button class="btn btn-small" style="margin-left: 1px; margin-right: 5px;"><a href="<%= book.amazon %>" style="color: black;">Free Book- Read Now</a></button>	
-		     <% end %>
- 			  </tr>	
- 			</table>
-	    <p><%= book.header %></p>
-	    
-	  </div>			
-	  <!-- Table -->
-	  <table class="table">
-	    <tr>
-			<td>Release date</td>
-			<td><%= book.release %></td>
-    	</tr>
-    	<tr>
-			<td>Author</td>
-			<td><%= book.author %></td>
-    	</tr>	
-    	    	
-	  </table>
+<% @oldoperator_feed.each do |item| %>
+	<% if item.is_a? Book %>
+	
+	<div class="container" id="content-row" style=" border-radius: 5px; background-color: white; margin-bottom: 30px;">
 	  
-	</div>			
+		  <div class="toggler" onclick="toggleText('<%= item.id %>');" style="cursor:pointer; position: relative">
+		  
+			  <!-- Content before clicking goes here -->
+			 
+			  <div class="thumbnail1" style="float: left; style="margin-left: 20px; margin-right: 20px;">
+	
+			  	<img  src="<%= item.imageurl %>" width="75" heigth="110" style="margin-left: 10px; margin-right: 20px; margin-bottom: 15px;">
+			  </div>
+			  
+			  <div style="float:right;">
+			  	<%= item.release %>
+			  </div>
+			  
+			  <div>
+			  <h2><%= item.title%></h2>
+			  			  
+			  </div>
+			  
+			  <div style="float: right;">
+			  <button type="button" class="btn btn-warning"><span class="glyphicon glyphicon-tags" aria-hidden="true" style="padding-right: 7px;"></span><%= item.genre %></button>
+			  </div>
+			  
+			  <!-- Content before clicking ends here -->
+			  <div id="<%= item.id %>" style="display:none;">
+			  <!-- Content after clicking goes here -->  
+				<div class= "container" style="margin-top: 100px; ">
+					<div class= "col-md-6" style="  margin-right: 10px; margin-left: 10px; margin-bottom: 10px; width: auto; float: left;">
+				     <img style="display: block; border-radius: 5px; margin-left:auto; margin-right: auto; margin-bottom: auto; "src="<%= item.imageurl %>" ahref="item.amazon" frameborder="0" "allowfullscreen"></iframe> 
+				  					    </div>
+				     <div class="col-md-6">
+				     	<div class="container" style="float:left; width:100%;">
+				     	<p><%= item.header %></p>
+				     	<button class="btn btn-small" disabled style="margin-left: 1px; margin-bottom:auto; float: right;"><%= pluralize(item.votes.count, "vote") %></button>
+				     	<%= button_to '+1', upvotebook_book_path(item), method: :post, class: 'btn btn-small', style: "margin-left: 1px; float: right;" %>
+			 	    	<% if item.free_book == "true" %>
+		     				<button class="btn btn-small" style="margin-left: 1px; margin-right: 5px;"><a href="<%= item.amazon %>" style="color: black;">Free Book- Read Now</a></button>	
+		     			<% end %>
+				     <br style="clear:both;"/>
+				     </div>
+					</div>
+					</div>
+			</div>
+			   
+			   <!-- Content after clicking ends here -->
+		   
+		</div>
+	</div>
+		
+		<script>
+		function toggleText(id) {
+	    var theText = document.getElementById(id);
+	 	 (theText.style.display=='block') ? theText.style.display='none' : theText.style.display='block' ;  
+		}
+		</script>
+		
+	<% else item.is_a? Video %>
+	<div class="container" id="content-row" style=" border-radius: 5px; background-color: white; margin-bottom: 30px;">
+	  
+		  <div class="toggler" onclick="toggleText('<%= item.id %>');" style="cursor:pointer; position: relative">
+		  
+			  <!-- Content before clicking goes here -->
+			 
+			  <div class="thumbnail1" style="float: left; style="margin-left: 20px; margin-right: 20px;">
+	
+			  	<img  src="http://i1.ytimg.com/vi/<%= item.image_url %>/hqdefault.jpg" width="110" heigth="63" style="margin-left: 10px; margin-right: 20px; margin-bottom: 15px;">
+			  </div>
+			  
+			  <div style="float:right;">
+			  	<%= item.uploaded %>
+			  </div>
+			  
+			  <div>
+			  <h2><%= item.title%></h2>
+			  			  
+			  </div>
+			  
+			  <div style="float: right;">
+			  <button type="button" class="btn btn-warning"><span class="glyphicon glyphicon-tags" aria-hidden="true" style="padding-right: 7px;"></span><%= item.genre %></button>
+			  </div>
+			  
+			  <!-- Content before clicking ends here -->
+			  <div id="<%= item.id %>" style="display:none;">
+			  <!-- Content after clicking goes here -->  
+				<div class= "container" style="margin-top: 100px; ">
+					<div class= "col-md-6" style="  margin-right: auto; margin-left: auto; margin-bottom: 10px; float: left;">
+				     <iframe width="500" height="315" style="border-radius: 5px; margin-left:auto; margin-right: auto; margin-bottom: auto; "src="<%= item.url %>" frameborder="0" "allowfullscreen"></iframe> 
+				  					    </div>
+				     <div class="col-md-6">
+				     	<div class="container" style="float:left; width:100%;">
+				     	<p><%= item.description %></p>
+				     	<button class="btn btn-small" disabled style="margin-left: 1px; margin-bottom:auto; float: right;"><%= pluralize(item.votes.count, "vote") %></button>
+				     	<%= button_to '+1', upvotevideo_video_path(item), method: :post, class: 'btn btn-small', style: "margin-left: 1px; float: right;" %>
+			 	    	
+			 	    	
+				     
+				     <br style="clear:both;"/>
+				     </div>
+					</div>
+					</div>
+			</div>
+			   
+			   <!-- Content after clicking ends here -->
+		   
+		</div>
+	</div>
+		
+		<script>
+		function toggleText(id) {
+	    var theText = document.getElementById(id);
+	 	 (theText.style.display=='block') ? theText.style.display='none' : theText.style.display='block' ;  
+		}
+		</script>
+	<% end %>	
 
-<button type="button" class="btn btn-warning"><span class="glyphicon glyphicon-tags" aria-hidden="true" style="padding-right: 7px;"></span><%= book.genre %></button>
-</div>
 <% end %>

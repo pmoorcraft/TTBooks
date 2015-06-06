@@ -12,7 +12,7 @@ Rails.application.routes.draw do
   get 'videofeed' => 'homepage#videofeed'
   get 'bookfeed' => 'homepage#bookfeed'
 
-  
+
 
  
  # Example of named route that can be invoked with purchase_url(id: product.id)
