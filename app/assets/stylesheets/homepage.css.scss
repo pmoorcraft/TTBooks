@@ -287,8 +287,13 @@ html {
   
   p  {
     font-family: 'Lato', sans-serif;
-    letter-spacing: -0.5px;
+
     
+  }
+  
+  #blogcontainer p  {
+    font-size: 17px;
+    letter-spacing: 0.5px;
   }
   
   strong {color: #FFFFFF;}
