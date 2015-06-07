@@ -5,9 +5,11 @@
 	  	<% @blogs.each do |blog| %>
 	  	<div class="container" id="blogcontainer">
 	      <h1 id="blogtitle"><%= link_to blog.title, controller: "blogs", action: "show", id: blog %></h1>
-          <p id="blogposttext" style="font-size:  18px;"> <%= simple_format blog.body.html_safe %></p>
+          <p id="blogposttext" style="font-size:  18px;"> <%= simple_format blog.body.first(600).html_safe %> (...)</p>
 	  	
 	  	<br />
+	  	 <a href="/blogs/<%= blog.id %>" role="button" class="btn btn-warning" style="color: white">Read More</a>
+		
 	  	<br />
 	  	</div>
 	  <% end %>
