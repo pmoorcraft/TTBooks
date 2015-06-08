@@ -4,12 +4,11 @@
 	  <title><%= h @page_title %></title>
 	  <%= favicon_link_tag %>	
 	  <%= stylesheet_link_tag "homepage.css" %>
-	  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
 	  <%= csrf_meta_tags %>
 	  <link href='http://fonts.googleapis.com/css?family=Abel' rel='stylesheet' type='text/css'>		
 	  <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Montserrat:700">
 	  <link rel='stylesheet' type='text/css' href='http://fonts.googleapis.com/css?family=Lato&subset=latin,latin-ext'>
-	  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+	  
 	  <meta property="og:title" content="TTBooks- The best source for the latest startup videos, talks, books and reads.">
 	  <meta name="description" content="Videos and books for tech startup entrepreneurs and investors. Entrepreneurship education for busy people." >
 	<meta property="og:type" content="article" />
@@ -24,7 +23,7 @@
 	</style>
 	<meta name="p:domain_verify" content="6b7e6bc3710d7d58485eb3250f4dc1dc"/>
     <script src="//hnbutton.appspot.com/static/hn.min.js" async defer></script>
-  	
+  	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
   	<script>
 		  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
 		  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -48,7 +47,8 @@
 }(document, 'script', 'trdflame'));
 </script>
 <!-- End of TrenDemon Code -->
-	
+
+	  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>	
 </head>
 <body>
 

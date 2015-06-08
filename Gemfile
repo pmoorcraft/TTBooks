@@ -16,7 +16,7 @@ gem 'sqlite3',     '1.3.9'
 gem 'google-webfonts'
 gem 'mysql2',  '0.3.18'
 gem 'httparty'
-
+gem 'haml-rails'
 
 
 group :development, :test do

@@ -1,0 +1,8 @@
+!!! XML
+%urlset{:xmlns => "http://www.sitemaps.org/schemas/sitemap/0.9"}
+  - for book in @books
+    %url
+      %loc #{book_url(book)}/
+      %lastmod=book.updated_at.strftime('%Y-%m-%d')
+      %changefreq monthly
+      %priority 0.5
