@@ -3,7 +3,7 @@
 	<% if item.is_a? Book %>
 	<div class="container" id="content-row">
 	  
-		  <div class="toggler" onclick="toggleText('<%= item.id %>');" >
+		  <div class="toggler" onclick="toggleText('<%= item.imageurl %><%= item.id %>');" >
 		  
 			  <!-- Content before clicking goes here -->
 			 
@@ -25,7 +25,7 @@
 			  </div>
 			  
 			  <!-- Content before clicking ends here -->
-			  <div id="<%= item.id %>" style="display:none;" style="background-color: rgb(170, 170, 170);">
+			  <div id="<%= item.imageurl %><%= item.id %>" style="display:none;" style="background-color: rgb(170, 170, 170);">
 			  <!-- Content after clicking goes here -->  
 				<div class= "container" style="margin-top: 100px; ">
 					<div class= "col-md-6" style="  margin-right: 10px; margin-left: 10px; margin-bottom: 10px; width: auto; float: left;">
@@ -74,7 +74,7 @@
     <% else item.is_a? Video %>
 		<div class="container" id="content-row">
 	  
-		  <div class="toggler" onclick="toggleText('<%= item.id %>');" style="cursor:pointer; position: relative">
+		  <div class="toggler" onclick="toggleText('<%= item.image_url %><%= item.id %>');" style="cursor:pointer; position: relative">
 		  
 			  <!-- Content before clicking goes here -->
 			 
@@ -97,7 +97,7 @@
 			  </div>
 			  
 			  <!-- Content before clicking ends here -->
-			  <div id="<%= item.id %>" style="display:none;">
+			  <div id="<%= item.image_url %><%= item.id %>" style="display:none;">
 			  <!-- Content after clicking goes here -->  
 				<div class= "container" style="margin-top: 100px; ">
 					<div class= "col-md-6" style="  margin-right: auto; margin-left: auto; margin-bottom: 10px; float: left;">
