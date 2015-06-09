@@ -21,9 +21,7 @@ class BooksController < ApplicationController
   
   def delete
   end
-  
-  def this_month
-  end
+
   
   def upvotebook
    book = Book.find(params[:id])

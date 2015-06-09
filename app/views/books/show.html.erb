@@ -9,8 +9,6 @@
 		  	</div>
 		  	<div class="panel panel-default" id="bookpanel">
 		  		
-		  	  
-			  <!-- Default panel contents -->
 			  <div class="panel-heading">
 			  <a href="<%= @book.amazon %>">	<%= @book.title %></a></div>
 			  <div class="panel-body">
@@ -24,7 +22,6 @@
 		     <% end %></tr>
 		     
 		     <br /><tr>
-		 			    <!-- Auto-detect URL of current page and title if necessary -->
 					   <a href="http://news.ycombinator.com/submit" class="hn-share-button">Vote on HN</a>
 					 	<script type="text/javascript">
 			  				reddit_url = <%= @book.amazon %>;
@@ -60,10 +57,8 @@
 		<button type="button" class="btn btn-warning"><span class="glyphicon glyphicon-tags" aria-hidden="true" style="padding-right: 7px;"></span><%= @book.genre %></button>
 				<div id="disqus_thread"></div>
 			<script type="text/javascript">
-		    /* * * CONFIGURATION VARIABLES * * */
 		    var disqus_shortname = 'ttbooks';
 		    
-		    /* * * DON'T EDIT BELOW THIS LINE * * */
 		    (function() {
 		        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
 		        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
