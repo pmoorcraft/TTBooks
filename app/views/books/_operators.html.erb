@@ -1,9 +1,9 @@
 <% @operator_feed.each do |item| %>
 		
 	<% if item.is_a? Book %>
-		<div class="container" id="content-row">
+		<div class="container" id="content-row" onclick="_gaq.push(['_trackEvent', 'Books', 'Read', 'Operator']);">
 	  
-		  <div class="toggler" onclick="toggleText('<%= item.imageurl %><%= item.id %>'); _gaq.push(['_trackEvent', 'Books', 'Read', 'Operator']);" >
+		  <div class="toggler" onclick="toggleText('<%= item.imageurl %><%= item.id %>');" >
 		  
 			  <!-- Content before clicking goes here -->
 			 
