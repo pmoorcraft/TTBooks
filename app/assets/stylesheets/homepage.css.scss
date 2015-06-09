@@ -32,12 +32,12 @@ html {
   
   #content-row h2  {
     margin-bottom: 0px;
-    color: #005D5D;
+    color: #B23F3F;
   }
   
   #content-row h2:hover  {
     font-weight: 900;
-    color: #007676;
+    color: #CE6868;
   }
   
   
@@ -167,7 +167,7 @@ html {
   }
   
   .jumbotron a {
-    color: #005D5D;
+    color: #B23F3F;
     padding-left: 10px;
     font-family: 'Abel', sans-serif;
     font-size: 18px;  
@@ -179,13 +179,13 @@ html {
     font-size: 23px;
     font-family: 'Abel', sans-serif;
     font-weight: bold;    
-    color: #005D5D;
+    color: #B23F3F;
     text-decoration: none;
   }
   
   .jumbotron a:hover {
     font-weight: 900;
-    color: #007676;
+    color: #CE6868;
     text-decoration: none;
   }
   
@@ -480,8 +480,6 @@ html {
     
     border-color: #000000; 
     background-color: #000000;
-    margin-left: 22px;
-    margin-right: 22px;
     margin-bottom: 10px;
     border-bottom: 2px solid black;
     &:hover {
@@ -631,6 +629,19 @@ html {
       color: #b31217;
     }
    }
+   
+   .fa-book  {
+     float: right;
+     margin-right: 20px;
+     margin-bottom: 2px;
+   }
+   
+    .fa-play-circle-o  {
+     float: right;
+     margin-right: 20px;
+     margin-bottom: 2px;
+   }
+   
    
    .glyphicon  {
      padding-right: 5px;
