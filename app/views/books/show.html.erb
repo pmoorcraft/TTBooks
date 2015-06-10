@@ -1,7 +1,7 @@
 	
 	  <%= render "shared/navbar" %>
 	  
-	  	<div class="book">
+	  	<div class="book" style="margin-left: 200px; margin-right: 200px;">
 			<div id="avatar">
 		     <% if @book.imageurl.present? %>	
 			    <a href="<%= @book.amazon %>"><%= image_tag @book.imageurl, alt: @book.alt %></a>

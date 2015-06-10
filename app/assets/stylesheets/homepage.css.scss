@@ -27,12 +27,13 @@ html {
   h2  {
     font-size: 23px;
     margin-top: 15px;
-    
+    -webkit-font-smoothing: antialiased;
   }
   
   #content-row h2  {
     margin-bottom: 0px;
     color: #B23F3F;
+    -webkit-font-smoothing: antialiased;
   }
   
   #content-row h2:hover  {
@@ -93,6 +94,7 @@ html {
     margin-bottom: 70px;
     margin-top: 50px;
     width: auto;
+    border-radius: 5px;
   }
   
   #blogcontainer a:link  {
@@ -278,12 +280,14 @@ html {
     font-family: 'Lato', sans-serif;
     font-size: 22px;
     color: white;
+    -webkit-font-smoothing: antialiased;
   }
   
 
   
   h4  {
     color: white; 
+    -webkit-font-smoothing: antialiased;
   }
   
   h3  {
@@ -291,6 +295,7 @@ html {
     text-align: center;
     margin-left: auto;
     margin-right: auto;
+    -webkit-font-smoothing: antialiased;
   }
   
   .jumbotron h5  {
