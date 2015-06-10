@@ -162,7 +162,7 @@ html {
     padding-bottom: 67px;
     padding-rigth: 1px;
     padding-left: 1px;
-    margin-left: 45px;
+    margin-left: 1px;
     margin-right: 45px;
     border-bottom-left-radius: 5px;
     border-bottom-right-radius: 5px;
@@ -487,6 +487,7 @@ html {
     background-color: #000000;
     margin-bottom: 10px;
     border-bottom: 2px solid black;
+    box-shadow: 3px 3px 0 0 #818181;
     &:hover {
               background-color: #464646;              
                border-color: #464646;
