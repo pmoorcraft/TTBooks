@@ -10,7 +10,7 @@ class HomepageController < ApplicationController
     @operatorvideos = @recentvideos.find_all {|i| i.tag == "operators" }      
     @recentbooks = Book.where(release: (25.days.ago..30.days.from_now))
     @operatorbooks = @recentbooks.find_all {|i| i.tag == "operators" }  
-    @operator_feed = @operator_feed.take(15)
+
     
     @operator_feed = (@operatorbooks + @operatorvideos).sort_by { |a| Time.now - a.created_at}
 
@@ -19,12 +19,12 @@ class HomepageController < ApplicationController
     @investorbooks = @recentbooks.find_all {|i| i.tag == "investors" }   
     @investorvideos = @recentvideos.find_all {|i| i.tag == "investors" }
     @investor_feed = (@investorbooks + @investorvideos).sort_by { |a| Time.now - a.created_at}
-    @investor_feed =  @investor_feed.take(15)
+
         
     @otherbooks = @recentbooks.find_all {|i| i.tag == "other" }
     @othervideos = @recentvideos.find_all {|i| i.tag == "other" }
     @other_feed = (@otherbooks + @othervideos).sort_by { |a| Time.now - a.created_at}
-     @other_feed =  @other_feed.take(15)
+
     
     @page_title = "TTBooks | Books and Videos for Entrepreneurs and Startups"
 
