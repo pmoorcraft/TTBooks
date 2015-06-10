@@ -160,9 +160,7 @@ html {
     background-color: #B7B7B7M; 
     padding-top: 2px;
     padding-bottom: 67px;
-    padding-rigth: 1px;
-    padding-left: 1px;
-    margin-left: 1px;
+    margin-left: 45px;
     margin-right: 45px;
     border-bottom-left-radius: 5px;
     border-bottom-right-radius: 5px;
@@ -519,6 +517,10 @@ html {
   .btn-small  {
     margin-left: 5px;
     color: white;
+  }
+  
+  .btn-small a:hover {
+    text-decoration: none;
   }
   
   .toggler  {
