@@ -32,7 +32,7 @@ html {
   
   #content-row h2  {
     margin-bottom: 0px;
-    color: #E62B1E;
+    color: white;
     -webkit-font-smoothing: antialiased;
   }
   
@@ -142,8 +142,9 @@ html {
    
    #content-row  {
      border-radius: 5px;
-     margin-bottom: 20px;
-     background-color: #CFCECE;
+     margin-bottom: 30px;
+     background-color: white;
+     box-shadow: 10px 10px 5px #888888;
    }
    
 
@@ -161,9 +162,9 @@ html {
   .jumbotron  {
     background-color: #B7B7B7M; 
     padding-top: 2px;
-    padding-bottom: 67px;
     margin-left: 45px;
     margin-right: 45px;
+    margin-bottom: 0px;
   }
   
   .jumbotron a {
@@ -371,6 +372,7 @@ html {
   
   .navbar  {
     background: black;
+    padding-bottom: 3px;
     margin-bottom: 0px;
     border: 0px;
     a {
@@ -591,7 +593,7 @@ html {
   
   .page-header {
     margin-top: 0px; 
-    background-image: url(https://s3-eu-west-1.amazonaws.com/ttbooks/lhYyWkK+copy.jpg);
+    background-image: url(https://s3-eu-west-1.amazonaws.com/ttbooks/header.jpg);
     -webkit-filter: contrast(1);
     padding-top: 30px;
     padding-bottom: 30px;
