@@ -3,10 +3,7 @@ class HomepageController < ApplicationController
     
     
     
-    @search = Book.search do
-      fulltext "test"
-    end
-    @results = @search.results
+    
 
     def index
       

@@ -17,8 +17,6 @@ gem 'google-webfonts'
 gem 'mysql2',  '0.3.18'
 gem 'httparty'
 gem 'haml-rails'
-gem 'sunspot_rails'
-gem 'sunspot_solr'
 
 
 group :development, :test do
