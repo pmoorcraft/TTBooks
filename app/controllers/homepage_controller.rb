@@ -1,6 +1,13 @@
 class HomepageController < ApplicationController
     before_filter :set_page_title
     
+    
+    
+    @search = Book.search do
+      fulltext "test"
+    end
+    @results = @search.results
+
     def index
       
     @books = Book.all  
@@ -13,7 +20,6 @@ class HomepageController < ApplicationController
 
     
     @operator_feed = (@operatorbooks + @operatorvideos).sort_by { |a| Time.now - a.created_at}
-
    
     
     @investorbooks = @recentbooks.find_all {|i| i.tag == "investors" }   
@@ -28,6 +34,8 @@ class HomepageController < ApplicationController
     
     @page_title = "TTBooks | Books and Videos for Entrepreneurs and Startups"
 
+    
+    
   end
   
   
