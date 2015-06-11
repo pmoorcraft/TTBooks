@@ -189,6 +189,41 @@ html {
     text-decoration: none;
   }
   
+  .resp-sharing-button {
+    display: inline-block;
+    border-radius: 5px;
+    border-width: 1px;
+    border-style: solid;
+    transition: background-color 125ms ease-out, border-color 125ms ease-out, opacity 250ms ease-out;
+    padding: 0.5em 0.75em;
+    font-family: 'Source Sans Pro', sans-serif; }
+    .resp-sharing-button a {
+      text-decoration: none;
+      color: #FFF;
+      display: block; }
+    .resp-sharing-button--large .resp-sharing-button__icon {
+      padding-right: 0.4em; }
+    .resp-sharing-button__icon {
+      width: 1em;
+      height: 1em;
+      margin-bottom: -0.1em; }
+    .resp-sharing-button__link {
+      text-decoration: none;
+      color: #FFF; }
+    .resp-sharing-button--facebook {
+    background-color: #3b5998;
+    border-color: #3b5998; }
+    .resp-sharing-button--facebook:hover,
+    .resp-sharing-button--facebook:active {
+      background-color: #2d4373;
+      border-color: #2d4373; }
+    .resp-sharing-button--twitter {
+    background-color: #55acee;
+    border-color: #55acee; }
+    .resp-sharing-button--twitter:hover,
+    .resp-sharing-button--twitter:active {
+      background-color: #2795e9;
+      border-color: #2795e9; }
   
   .back-to-top {
     background: none;
