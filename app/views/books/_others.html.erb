@@ -34,7 +34,7 @@
 				     	<div class="container" style="float:left; width:100%;">
 				     	<p><%= item.header %></p>
 				     	<button class="btn btn-warning btn-small" style="margin-left: 1px; margin-bottom:auto; float: right; cursor: default; margin-left: 5px;"><%= pluralize(item.votes.count, "vote") %></button>
-				     	<%= button_to '+1', upvotebook_book_path(item), method: :post, class: 'btn btn-warning btn-small', style: "margin-left: 1px; float: right;" %>
+				     	<%= button_to '+1', upvotebook_book_path(item), method: :post, class: 'btn btn-warning btn-small', style: "margin-left: 1px; float: right;", onclick: "onClick="ga('send', 'event', { eventCategory: 'Book', eventAction: 'Vote', eventValue: 1});"" %>
 			 	    	<% if item.free_book == "true" %>
 		     				<button class="btn btn-warning btn-small" style="margin-left: 5px; margin-right: 5px; margin-top: -1px; float:right;"><a style= "color: white;" href="<%= item.amazon %>">Free Book- Read Now</a></button>	
 		     			<% end %>
