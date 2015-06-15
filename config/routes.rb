@@ -14,6 +14,7 @@ Rails.application.routes.draw do
 
   get 'sitemap.xml', :to => 'sitemap#index', :defaults => { :format => 'xml' }
   get 'videositemap.xml', :to => 'videositemap#index', :defaults => { :format => 'xml' }
+  get 'blogsitemap.xml', :to => 'blogsitemap#index', :defaults => { :format => 'xml' }
 
   get 'readingroom' => 'homepage#readingroom'
  
