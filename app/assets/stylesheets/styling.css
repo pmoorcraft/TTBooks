@@ -1,0 +1,195 @@
+	body  {
+		margin-bottom: 40px;
+	}
+	
+	.flex-container {
+	  padding: 0;
+	  margin: 0;
+	  list-style: none;
+	  
+	  display: -webkit-box;
+	  display: -moz-box;
+	  display: -ms-flexbox;
+	  display: -webkit-flex;
+	  display: flex;
+	  
+	  -webkit-flex-flow: row wrap;
+	  justify-content: space-around;
+	  
+	  margin: 50px;
+	}
+	
+	
+	.flex-item {
+	  background: black;
+	  padding: 5px;
+	  width: 200px;
+	  height: 150px;
+	  margin: 20px;
+	  border: 2px solid #eeeeee;
+	  
+	  border-radius: 5px;
+	  line-height: 150px;
+	  color: white;
+	  font-weight: bold;
+	  font-size: 3em;
+	  text-align: center;
+	  -webkit-transition: all 1s ease;
+	     -moz-transition: all 0.5s ease;
+	       -o-transition: all 0.5s ease;
+	      -ms-transition: all 0.5s ease;
+	          transition: all 0.5s ease;
+	}
+	
+	.flex-item a {
+	  font-family: 'Open Sans', sans-serif;
+	  font-size: 17px;
+	  
+	}
+	
+	.flex-item:hover {
+       -webkit-filter: drop-shadow(10px 7px 1px grey);
+    }
+	
+	
+	.notes {padding: 50px 0px; background:black;}
+	.notes p {
+	  font-family: 'Lato', sans-serif;
+	  font-size: 13px;
+	  margin:auto;
+	  color: #fff;
+	  max-width:500px;
+	  text-align:center;
+	}
+	
+	.notes p:link {
+	  color: #eeeeee;
+	}
+	
+	
+	.notes h1 {
+	  font-family: 'Montserrat', sans-serif;
+	  margin:auto;
+	  color: #fff;
+	  max-width:500px;
+	  text-align:center;
+	}
+	
+	.header h1  {
+		font-family: 'Montserrat', sans-serif;
+	}
+	
+
+
+    .header  {
+    	text-align: center;
+    }
+    
+    #real  {
+    	  background-image: url(http://i.imgur.com/7JIVK7Q.jpg);
+    }
+    
+    #design  {
+    	  background-image: url(http://i.imgur.com/qd0q6Tc.jpg);
+    }
+    
+    #avc  {
+    	  background-image: url(http://i.imgur.com/W4ZvNtm.jpg);
+    	  background-repeat: no-repeat;
+    	  background-position: center; 
+    }
+    
+    #clv  {
+    	  background-image: url(http://i.imgur.com/NSMULAx.png);
+    	  background-repeat: no-repeat;
+    	  background-position: center; 
+    }
+    
+    #zapos  {
+    	background-image: url(http://i.imgur.com/SNXXQFa.jpg);
+    }
+    
+    #mgmt  {
+    	background-image: url(http://i.imgur.com/szhIHkk.jpg);
+    }
+
+	#ab  {
+    	background-image: url(http://i.imgur.com/ACxXT2L.jpg);
+    }
+    
+    #ab1  {
+    	background-image: url(http://i.imgur.com/PKkyjv6.png);
+    }
+    
+    #enter  {
+    	background-image: url(http://i.imgur.com/f02bw3I.png);
+    }  
+    
+    #chimp  {
+    	background-image: url(http://i.imgur.com/PkI0h8p.jpg);
+    	background-repeat: no-repeat;
+    	  background-position: center; 
+    }
+    
+    #koozai  {
+    	background-image: url(http://i.imgur.com/Jo51HLe.png);
+    	background-repeat: no-repeat;
+    	  background-position: center; 
+    }
+
+  #iacquire  {
+  	    background-image: url(http://i.imgur.com/w3IbLCW.jpg);
+  }
+  
+  #google  {
+  	background-image: url(http://i.imgur.com/OSuvxMS.png);
+  }
+  
+  #copy  {
+  	background-image: url(http://i.imgur.com/tdtk0o7.png);
+  }
+  
+  #outreach  {
+  	background-image: url(http://i.imgur.com/9gyk80Y.png);
+  }
+
+  #adwords  {
+  	background-image: url(http://i.imgur.com/iRXI8hr.png);
+  }
+  
+  #igor  {
+  	background-image: url(http://i.imgur.com/z5SNyqk.jpg);
+  }
+  
+  #growthh  {
+  	background-image: url(https://s3-eu-west-1.amazonaws.com/ttbooks/Screen+Shot+2015-05-31+at+21.18.14.png);
+  }
+  
+  #buzz  {
+  	background-image: url(https://s3-eu-west-1.amazonaws.com/ttbooks/Screen+Shot+2015-05-31+at+21.33.08.png);
+  }
+
+  
+ #acq  {
+  	background-image: url(https://s3-eu-west-1.amazonaws.com/ttbooks/Screen+Shot+2015-06-10+at+21.04.36.png);
+  }
+  
+  #inter  {
+  	background-image: url(https://s3-eu-west-1.amazonaws.com/ttbooks/Screen+Shot+2015-06-15+at+14.52.23.png);
+  }
+  
+  #hubs  {
+  	background-image: url(https://s3-eu-west-1.amazonaws.com/ttbooks/Screen+Shot+2015-06-15+at+14.57.35+copy.jpg);
+  }
+  
+  #linkb  {
+  	background-image: url(https://s3-eu-west-1.amazonaws.com/ttbooks/Screen+Shot+2015-06-15+at+15.05.04+copy.jpg);
+  }
+  
+  #advseo  {
+  	background-image: url(https://s3-eu-west-1.amazonaws.com/ttbooks/Screen+Shot+2015-06-15+at+15.08.11+copy.jpg);
+  }
+  
+#outs  {
+  	background-image: url(https://s3-eu-west-1.amazonaws.com/ttbooks/Screen+Shot+2015-06-15+at+15.11.34+copy.jpg);
+  }

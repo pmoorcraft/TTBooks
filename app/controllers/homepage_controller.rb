@@ -84,6 +84,9 @@ class HomepageController < ApplicationController
     @page_title = "TTBooks About | Books and Videos for Entrepreneurs and Startups"
   end
 
+  def readingroom
+    
+  end
  
  private
  
