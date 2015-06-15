@@ -13,6 +13,7 @@ Rails.application.routes.draw do
   get 'bookfeed' => 'homepage#bookfeed'
 
   get 'sitemap.xml', :to => 'sitemap#index', :defaults => { :format => 'xml' }
+  get 'videositemap.xml', :to => 'videositemap#index', :defaults => { :format => 'xml' }
 
   get 'readingroom' => 'homepage#readingroom'
  

@@ -1,0 +1,8 @@
+!!! XML
+%urlset{:xmlns => "http://www.sitemaps.org/schemas/sitemap/0.9"}
+  - for video in @videos
+    %url
+      %loc #{video_url(video)}/
+      %lastmod=video.updated_at.strftime('%Y-%m-%d')
+      %changefreq monthly
+      %priority 0.5
