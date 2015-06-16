@@ -1,9 +1,9 @@
 <% @operator_feed.each do |item| %>
 		
 	<% if item.is_a? Book %>
-		<div class="container" id="content-row" onclick="_gaq.push(['_trackEvent', 'Books', 'Read', 'Operator']);">
+		<div class="container" id="content-row" onclick="toggleText('<%= item.imageurl %><%= item.id %>');">
 	  
-		  <div class="toggler" onclick="toggleText('<%= item.imageurl %><%= item.id %>');" >
+		  <div class="toggler"  >
 		  
 			  <!-- Content before clicking goes here -->
 			 
@@ -16,7 +16,7 @@
 			  </div>
 			  
 			  <div>
-			  <h2><%= item.title%></h2><i class="fa fa-book fa-2x"></i>
+			  <h2><a style="color: inherit; text-decoration : none" href="<%= item.amazon %>"><%= item.title%></a></h2><i class="fa fa-book fa-2x"></i>
 	
 			  <p><%= item.author%></p>  
 			  </div>
@@ -79,10 +79,10 @@
 
 		
     <% else item.is_a? Video %>
-		<div class="container" id="content-row">
+		<div class="container" id="content-row" onclick="toggleText('<%= item.image_url %><%= item.id %>');">
 	  
-		  <div class="toggler" onclick="toggleText('<%= item.image_url %><%= item.id %>');" style="cursor:pointer; position: relative">
-		  
+		  <div class="toggler"  >
+			  
 			  <!-- Content before clicking goes here -->
 			 
 			  <div class="thumbnail1" style="float: left; style="margin-left: 20px; margin-right: 20px;">

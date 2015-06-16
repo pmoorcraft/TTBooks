@@ -1,8 +1,8 @@
 <% @investor_feed.each do |item| %>
 	<% if item.is_a? Book %>
-		<div class="container" id="content-row">
+		<div class="container" id="content-row" onclick="toggleText('<%= item.imageurl %><%= item.id %>');">
 	  
-		  <div class="toggler" onclick="toggleText('<%= item.imageurl %><%= item.id %>');" >
+		  <div class="toggler"  >
 		  
 			  <!-- Content before clicking goes here -->
 			 
@@ -10,13 +10,14 @@
 				<img  src="<%= item.imageurl %>" width="75" heigth="110" style="margin-left: 10px; margin-right: 20px; margin-bottom: 15px;">
 			  </div>
 			  
-			   <div style="float:right; margin-right:20px; margin-bottom: -2px;">
+			  <div style="float:right; margin-right:20px; margin-bottom: -2px;">
 			  	<%= item.release %>
 			  </div>
 			  
 			  <div>
-			  <h2><%= item.title%></h2><i class="fa fa-book fa-2x"></i>
-			  <p><%= item.author%></p>  			  
+			  <h2><a style="color: inherit; text-decoration : none" href="<%= item.amazon %>"><%= item.title%></a></h2><i class="fa fa-book fa-2x"></i>
+	
+			  <p><%= item.author%></p>  
 			  </div>
 			  
 			  <div style="float: left;">
@@ -26,9 +27,9 @@
 			  <!-- Content before clicking ends here -->
 			  <div id="<%= item.imageurl %><%= item.id %>" style="display:none;" style="background-color: rgb(170, 170, 170);">
 			  <!-- Content after clicking goes here -->  
-				<div class= "container" style="margin-top: 100px; ">
+				<div class= "container" style="margin-top: 75px; ">
 					<div class= "col-md-6" style="  margin-right: 10px; margin-left: 10px; margin-bottom: 10px; width: auto; float: left;">
-				     <a href="<%= item.amazon %>" onClick="ga('send', 'event', { eventCategory: 'Affiliate link', eventAction: 'Amazon', eventLabel: 'Investor Book'});"><img src="<%= item.imageurl %>" style="display: block; border-radius: 5px; margin-left:auto; margin-right: auto; margin-bottom: auto;"></a> 
+				     <a href="<%= item.amazon %>" onClick="ga('send', 'event', { eventCategory: 'Affiliate link', eventAction: 'Amazon', eventLabel: 'Operator Book'});"><img src="<%= item.imageurl %>" style="display: block; border-radius: 5px; margin-left:auto; margin-right: auto; margin-bottom: auto;"></a> 
 			  			</div>
 				     <div class="col-md-8">
 				     	<div class="container" style="float:left; width:100%;">
@@ -59,6 +60,8 @@
 				     </div>
 					</div>
 					</div>
+					
+					
 			</div>
 			   
 			   <!-- Content after clicking ends here -->
@@ -75,10 +78,10 @@
 
 		
     <% else item.is_a? Video %>
-		<div class="container" id="content-row">
+		<div class="container" id="content-row" onclick="toggleText('<%= item.image_url %><%= item.id %>');">
 	  
-		  <div class="toggler" onclick="toggleText('<%= item.image_url %><%= item.id %>');" style="cursor:pointer; position: relative">
-		  
+		  <div class="toggler"  >
+			  
 			  <!-- Content before clicking goes here -->
 			 
 			  <div class="thumbnail1" style="float: left; style="margin-left: 20px; margin-right: 20px;">
@@ -92,7 +95,7 @@
 			  
 			  <div>
 			  <h2><%= item.title%></h2><i class="fa fa-play-circle-o fa-2x"></i>
-			  <p><%= item.speakers%></p>  			  
+			  <p><%= item.speakers%></p>  		  
 			  </div>
 			  
 			  <div style="float: left;">
@@ -102,7 +105,7 @@
 			  <!-- Content before clicking ends here -->
 			  <div id="<%= item.image_url %><%= item.id %>" style="display:none;">
 			  <!-- Content after clicking goes here -->  
-				<div class= "container" style="margin-top: 100px; ">
+				<div class= "container" style="margin-top: 75px; ">
 					<div class= "col-md-6" style="  margin-right: auto; margin-left: auto; margin-bottom: 10px; float: left;">
 				     <iframe width="500" height="315" style="border-radius: 5px; margin-left:auto; margin-right: auto; margin-bottom: auto; "src="<%= item.url %>" frameborder="0" "allowfullscreen"></iframe> 
 				  					    </div>
@@ -146,12 +149,11 @@
 	 	 (theText.style.display=='block') ? theText.style.display='none' : theText.style.display='block' ;  
 		}
 		</script>	
-	<% end %>	
-
-<% end %>
-
-<div class="container" id="content-row" style=" border-radius: 5px; margin-bottom: 30px; background-color: rgb(230, 43, 30);">
-	<div class="toggler" onclick="toggleText('ad');" style="cursor:pointer; position: relative">
+	<% end %>
+	
+<% end %>	
+<div class="container" id="content-row" style="background-color: rgb(230, 43, 30);">
+	<div class="toggler" onclick="toggleText('ad1');" style="cursor:pointer; position: relative">
 		  
 			  <!-- Content before clicking goes here -->
 			 
@@ -162,24 +164,24 @@
 
 			  
 			  <div>
-			  <h2 style="color: white;">Associate Website and offer for investors</h2>
-			  <p style="color: white;">TTBooks</p> 			  
+			  <h2 style="color: white;">Associate Website and offer for startup operators</h2>
+			  <p style="color: white;">TTBooks</p>  		  
 			  </div>
 			  
 			  <!-- Content before clicking ends here -->
-			  <div id="ad" style="display:none;">
+			  <div id="ad1" style="display:none;">
 			  <!-- Content after clicking goes here -->  
-				<div id="avatar">
-				    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-					<!-- TTBooks-Test -->
-					<ins class="adsbygoogle"
-					     style="display:inline-block;width:300px;height:250px"
-					     data-ad-client="ca-pub-3319618738478027"
-					     data-ad-slot="2561252622"></ins>
-					<script>
-					(adsbygoogle = window.adsbygoogle || []).push({});
-					</script>
-			  	</div>
+			<div id= "avatar">
+	 			<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+				<!-- TTBooks- 1 -->
+				<ins class="adsbygoogle"
+				     style="display:inline-block;width:336px;height:280px"
+				     data-ad-client="ca-pub-3319618738478027"
+				     data-ad-slot="7413267829"></ins>
+				<script>
+				(adsbygoogle = window.adsbygoogle || []).push({});
+				</script>	
+			</div> 	
 			  	<p style="color: white;">If the service displayed doesn't suit your needs please let use know.</p>
 			</div>
 			   
@@ -188,4 +190,5 @@
 		</div>
 
 
+</div>
 </div>
