@@ -44,7 +44,7 @@
 			<td>Speakers</td>
 			<td><%= @video.speakers %></td>
     	</tr>
-    	<div style="float:left; padding-right: 10px;">
+    	<div style="float:left; padding-left: 10px;">
 			 	    	<h3 style="text-align: left;">Related Content</h3>
 			 	    	<ul><a href="<%= @video.related1 %>" onClick="ga('send', 'event', { eventCategory: 'Related Content', eventAction: 'Link Click', eventLabel: 'Investor Video'});" style="color: #E62B1E; text-decoration: none;" ><%= @video.related1name %></a></ul>
 			 	    	<ul><a href="<%= @video.related2 %>" onClick="ga('send', 'event', { eventCategory: 'Related Content', eventAction: 'Link Click', eventLabel: 'Investor Video'});" style="color: #E62B1E; text-decoration: none;"><%= @video.related2name %></a></ul>

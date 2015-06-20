@@ -22,6 +22,10 @@ class VideosController < ApplicationController
     @video = Video.find(params[:id])
   end
   
+  def update
+  
+  end
+  
   def delete
   end
   

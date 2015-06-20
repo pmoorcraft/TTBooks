@@ -50,7 +50,7 @@
 					<td>Author</td>
 					<td><%= @book.author %></td>
 		    	</tr>	
-		    	<div style="float:left; padding-right: 10px;">
+		    	<div style="float:left; padding-left: 10px;">
 			 	    	<h3 style="text-align: left;">Related Content</h3>
 			 	    	<ul><a href="<%= @book.related1 %>" onClick="ga('send', 'event', { eventCategory: 'Related Content', eventAction: 'Link Click', eventLabel: 'Investor Video'});" style="color: #E62B1E; text-decoration: none;" ><%= @book.related1name %></a></ul>
 			 	    	<ul><a href="<%= @book.related2 %>" onClick="ga('send', 'event', { eventCategory: 'Related Content', eventAction: 'Link Click', eventLabel: 'Investor Video'});" style="color: #E62B1E; text-decoration: none;"><%= @book.related2name %></a></ul>
