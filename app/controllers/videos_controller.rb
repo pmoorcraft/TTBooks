@@ -1,5 +1,5 @@
 class VideosController < ApplicationController
-
+  http_basic_authenticate_with name: "pedro", password: "12345qwer", only: [:edit, :create, :delete]
   before_filter :set_page_title
   
   def new
@@ -19,6 +19,7 @@ class VideosController < ApplicationController
   end
   
   def edit
+    @video = Video.find(params[:id])
   end
   
   def delete
@@ -47,7 +48,7 @@ class VideosController < ApplicationController
   private
   
   def video_params
-    params.require(:video).permit( :title, :url, :description, :uploaded, :speakers,:tag, :header, :genre, :image_url)
+    params.require(:video).permit( :title, :url, :description, :uploaded, :speakers,:tag, :header, :genre, :image_url, :related1, :related2, :related3, :related1name, :related2name, :related3name)
   end
   
   def set_page_title

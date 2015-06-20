@@ -1,5 +1,6 @@
 class BooksController < ApplicationController
-
+  http_basic_authenticate_with name: "pedro", password: "12345qwer", only: [:edit, :create, :delete]
+  
   before_filter :set_page_title
   
   def new
@@ -17,6 +18,7 @@ class BooksController < ApplicationController
   end
   
   def edit
+     @book = Book.find(params[:id]) 
   end
   
   def delete
@@ -43,7 +45,7 @@ class BooksController < ApplicationController
   private
   
   def book_params
-    params.require(:book).permit(:avatar, :title, :imageurl, :header, :release, :publisher, :tag, :avatar, :amazon, :author, :genre, :free_book, :alt)
+    params.require(:book).permit(:avatar, :title, :imageurl, :header, :release, :publisher, :tag, :avatar, :amazon, :author, :genre, :free_book, :alt, :related1, :related2, :related3, :related1name, :related2name, :related3name)
   end
    
   def set_page_title
