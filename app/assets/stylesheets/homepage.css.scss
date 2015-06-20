@@ -52,6 +52,7 @@ html {
     padding-bottom: 10px;
     width: auto;   
     text-align:center;
+      color: rgb(230, 43, 30);
   }
   
   #avatar img  {
@@ -308,6 +309,11 @@ html {
     
   }
   
+  .col-md-6 img  {
+    max-width: 200px;
+    
+  }
+  
   .page-header h3  {
     text-align: center;
     margin-left: auto;
@@ -319,6 +325,10 @@ html {
     -webkit-font-smoothing: antialiased;
   }
   
+  a i:hover {
+    text-decoration: none;
+    color: white;
+  }
 
   
   h4  {
@@ -657,6 +667,18 @@ html {
     margin-left: 7px;
     margin-top: 5px;
     margin-bottom: 7px;
+   }
+   
+   .fa-arrow-up:hover  {
+     color: white;
+   }
+   
+   .fa-arrow-up:visited  {
+     color: white;
+   }
+   
+   .fa-arrow-up:active  {
+     color: white;
    }
    
    .fa-twitter  {
