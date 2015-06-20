@@ -23,8 +23,12 @@ class VideosController < ApplicationController
   end
   
   def update
-  
+    @video = Video.find(params[:id])
+    @video.update(video_params)
+    redirect_to @video
+      
   end
+  
   
   def delete
   end
