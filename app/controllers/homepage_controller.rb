@@ -9,10 +9,10 @@ class HomepageController < ApplicationController
       
     @books = Book.all  
     @videos = Video.all  
-    @recentvideos = Video.where(uploaded: (12.days.ago..Time.now))
+    @recentvideos = Video.where(created_at: (12.days.ago..Time.now))
   
     @operatorvideos = @recentvideos.find_all {|i| i.tag == "operators" }      
-    @recentbooks = Book.where(release: (12.days.ago..30.days.from_now))
+    @recentbooks = Book.where(created_at: (12.days.ago..30.days.from_now))
     @operatorbooks = @recentbooks.find_all {|i| i.tag == "operators" }  
 
     
