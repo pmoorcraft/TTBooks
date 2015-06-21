@@ -62,8 +62,18 @@ html {
       width: 100%;
       height: 100%;
     }
-    .col-sm-4 .col-xs-3  {
-      border: none;
+    #middlecolsm {
+      border: none!important;
+    }
+    .jumbotron a:link  {
+      font-size: 14px!important;
+    }
+    .col-md-6  {
+      width: 100%!important;
+    }
+    
+    p  {
+      font-size: 10px;
     }
   }
   
