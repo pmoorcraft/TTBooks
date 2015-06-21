@@ -679,7 +679,15 @@ html {
      color: white;
    }
    
-   .fa-arrow-up:visited  {
+   a:focus  {
+     color: white;
+   }
+   
+   a .fa-arrow-up:visited{
+     color: white;
+   }
+   
+   a .fa-arrow-up:focus{
      color: white;
    }
    
