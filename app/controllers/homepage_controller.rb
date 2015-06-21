@@ -36,6 +36,7 @@ class HomepageController < ApplicationController
   end
   
   
+  
   def archive
     @oldbooks = Book.where(created_at: (1000.days.ago..10.days.ago))
     @oldvideos = Video.where(created_at: (1000.days.ago..10.days.ago))
