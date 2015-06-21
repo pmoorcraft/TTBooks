@@ -99,6 +99,7 @@ html {
     margin-top: 50px;
     width: auto;
     border-radius: 5px;
+    font-size: 16px;
   }
   
   #blogcontainer a:link  {
@@ -107,6 +108,11 @@ html {
   
   #blogcontainer a:visited  {
     color: #E62B1E;
+  }
+  
+  #blogcontainer a:hover  {
+    text-decoration:none;
+    color: #B23F3F;
   }
 
   

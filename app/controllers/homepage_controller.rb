@@ -44,20 +44,20 @@ class HomepageController < ApplicationController
     @oldoperatorbooks = @oldbooks.find_all {|i| i.tag == "operators" }    
     @oldoperatorvideos = @oldvideos.find_all {|i| i.tag == "operators" }
     @oldoperator_feed = (@oldoperatorbooks + @oldoperatorvideos).sort_by { |a| Time.now - a.created_at}
-    @oldoperator_feed = @oldoperator_feed.take(8)
+    @oldoperator_feed = @oldoperator_feed.take(9)
     
     
     
     @oldinvestorbooks = @oldbooks.find_all {|i| i.tag == "investors" }       
     @oldinvestorvideos = @oldvideos.find_all {|i| i.tag == "investors" }
     @oldinvestor_feed = (@oldinvestorbooks + @oldinvestorvideos).sort_by { |a| Time.now - a.created_at}
-    @oldinvestor_feed =  @oldinvestor_feed.take(8)
+    @oldinvestor_feed =  @oldinvestor_feed.take(9)
      
      
     @oldotherbooks = @oldbooks.find_all {|i| i.tag == "other" }
     @oldothervideos = @oldvideos.find_all {|i| i.tag == "other" }
     @oldother_feed = (@oldotherbooks + @oldothervideos).sort_by { |a| Time.now - a.created_at}
-    @oldother_feed =  @oldother_feed.take(8)
+    @oldother_feed =  @oldother_feed.take(9)
     
     @page_title = "TTBooks Archive | Books and Videos for Entrepreneurs and Startups"
 
