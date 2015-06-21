@@ -1,7 +1,7 @@
 <% @oldoperator_feed.each do |item| %>
 
 	<% if item.is_a? Book %>
-		<div class="container" id="content-row" onclick="toggleText('<%= item.imageurl %><%= item.id %>'); ga('send', 'event', { eventCategory: 'Expand Book', eventAction: 'Expand', eventLabel: 'Old Operator Book'});">
+		<div class="container" id="content-row" tabindex="9" onclick="toggleText('<%= item.imageurl %><%= item.id %>'); ga('send', 'event', { eventCategory: 'Expand Book', eventAction: 'Expand', eventLabel: 'Old Operator Book'});">
 	  
 		  <div class="toggler"  >
 		  
@@ -79,7 +79,7 @@
 
 		
     <% else item.is_a? Video %>
-		<div class="container" id="content-row" onclick="toggleText('<%= item.image_url %><%= item.id %>'); ga('send', 'event', { eventCategory: 'Expand Video', eventAction: 'Expand', eventLabel: 'Old Operator Video'});">
+		<div class="container" id="content-row" tabindex="10" onclick="toggleText('<%= item.image_url %><%= item.id %>'); ga('send', 'event', { eventCategory: 'Expand Video', eventAction: 'Expand', eventLabel: 'Old Operator Video'});">
 	  
 		  <div class="toggler"  >
 			  

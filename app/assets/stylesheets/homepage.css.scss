@@ -145,11 +145,22 @@ html {
    #content-row  {
      border-radius: 5px;
      margin-bottom: 30px;
-     background-color: white;
-     box-shadow: 10px 10px 5px #888888;
-     cursor: pointer;
+
+     transition: background, 0.3s;
    }
    
+   #content-row:hover  {
+     background-color: white;
+     box-shadow: 10px 10px 5px #888888;
+   }
+   
+   #content-row:focus{
+    background-color: white;
+      outline: none;
+      box-shadow: 10px 10px 5px #888888;
+}
+   
+
 
    
    #disqus_thread  {
@@ -192,6 +203,9 @@ html {
     text-decoration: none;
   }
   
+  ul a:hover  {
+     color: #B23F3F;
+  }
   .resp-sharing-button {
     display: inline-block;
     border-radius: 5px;
@@ -566,7 +580,6 @@ html {
   }
   
   .toggler  {
-    cursor:pointer; 
     position: relative
   }
   

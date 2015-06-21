@@ -1,6 +1,6 @@
 <% @oldinvestor_feed.each do |item| %>
 	<% if item.is_a? Book %>
-		<div class="container" id="content-row" onclick="toggleText('<%= item.imageurl %><%= item.id %>'); ga('send', 'event', { eventCategory: 'Expand Book', eventAction: 'Expand', eventLabel: 'Old Investor Book'});">
+		<div class="container" id="content-row" tabindex="11" onclick="toggleText('<%= item.imageurl %><%= item.id %>'); ga('send', 'event', { eventCategory: 'Expand Book', eventAction: 'Expand', eventLabel: 'Old Investor Book'});">
 	  
 		  <div class="toggler"  >
 		  
@@ -78,7 +78,7 @@
 
 		
     <% else item.is_a? Video %>
-		<div class="container" id="content-row" onclick="toggleText('<%= item.image_url %><%= item.id %>'); ga('send', 'event', { eventCategory: 'Expand Video', eventAction: 'Expand', eventLabel: 'Old Investor Video'});">
+		<div class="container" id="content-row" tabindex="12"onclick="toggleText('<%= item.image_url %><%= item.id %>'); ga('send', 'event', { eventCategory: 'Expand Video', eventAction: 'Expand', eventLabel: 'Old Investor Video'});">
 	  
 		  <div class="toggler"  >
 			  
