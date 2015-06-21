@@ -44,6 +44,21 @@ html {
     color: #B23F3F;
   }
   
+  @media all and (max-width: 600px) and (min-width: 20px)  {
+    h2  {
+    font-size: 17px;
+  }
+  h3  {
+    font-size: 18px;
+  }
+  h1  {
+    font-size: 23px;
+  }
+    .btn-warning  {
+      font-size: 12px;
+    }
+  }
+  
 
   
   
@@ -483,14 +498,14 @@ html {
   .sub-header {
     color: white;
     background-color: black;
-    margin-left: 400px;
-    margin-right: 400px;
+    margin-left: auto;
+    margin-right: auto;
     border-radius: 5px;
     padding-bottom: 15px;
     padding-top: 15px;
     padding-right: 15px;
     padding-left: 15px;
-    
+    width: 40%;
     margin-bottom: 80px;
     margin-top: 40px;
   }
