@@ -5,7 +5,7 @@
 		  <div class="toggler"  >
 		  
 			  <!-- Content before clicking goes here -->
-			 
+			 <h2 id="votes" style="float: left"><%= (item.votes.count) %></h2>
 			  <div class="thumbnail1" style="float: left; margin-left: 20px; margin-right: 14px;">
 				<img  src="<%= item.imageurl %>" width="75" style=" max-height: 100px; margin-left: 10px; margin-right: 20px; margin-bottom: 15px;">
 			  </div>
@@ -89,7 +89,7 @@
 		  <div class="toggler"  >
 			  
 			  <!-- Content before clicking goes here -->
-			 
+			  <h2 id="votes" style="float: left"><%= (item.votes.count) %></h2>
 			  <div class="thumbnail1" style="float: left; style="margin-left: 20px; margin-right: 20px;">
 	
 			  	<img  src="http://i1.ytimg.com/vi/<%= item.image_url %>/default.jpg" width="110" heigth="63" style="margin-left: 10px; margin-right: 20px; margin-bottom: 15px;">
@@ -181,26 +181,12 @@
 	<% end %>
 	
 <% end %>	
-<div class="container" id="content-row" style="background-color: rgb(230, 43, 30);">
-	<div class="toggler" onclick="toggleText('ad1'); ga('send', 'event', { eventCategory: 'Expand Ad', eventAction: 'Expand', eventLabel: 'Adsense Expand'});" style="cursor:pointer; position: relative">
-		  
-			  <!-- Content before clicking goes here -->
-			 
-			  <div class="thumbnail1" style="float: left; margin-left: 20px; margin-right: 20px;">
-	
-			  	<img  src="https://s3-eu-west-1.amazonaws.com/ttbooks/ms-icon-310x310.png" width="75" heigth="110" style="margin-left: 10px; margin-right: 20px; margin-bottom: 15px;">
-			  </div>
-
-			  
-			  <div>
-			  <h2 style="color: white;">Related offer and content for startups</h2>
-			  <p style="color: white;">TTBooks</p>  		  
-			  </div>
+	 
 			  
 			  <!-- Content before clicking ends here -->
-			  <div id="ad1" style="display:none;">
+			  <div id="ad1" >
 			  <!-- Content after clicking goes here -->  
-			<div id= "avatar">
+				<div id= "avatar">
 	 			<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 				<!-- TTBooks- 1 -->
 				<ins class="adsbygoogle"
@@ -211,12 +197,5 @@
 				(adsbygoogle = window.adsbygoogle || []).push({});
 				</script>	
 			</div> 	
-			  	<p style="color: white;">If the service displayed doesn't suit your needs please let use know.</p>
+			  	
 			</div>
-			   
-			   <!-- Content after clicking ends here -->
-		   
-		</div>
-
-
-</div>

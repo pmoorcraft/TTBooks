@@ -3,7 +3,7 @@
 		<div class="container" id="content-row" tabindex="5" onclick="toggleText('<%= item.imageurl %><%= item.id %>');  ga('send', 'event', { eventCategory: 'Expand Book', eventAction: 'Expand', eventLabel: 'Other Book'});"">
 	  
 		  <div class="toggler"  >
-		  
+		   <h2 id="votes" style="float: left"><%= (item.votes.count) %></h2>
 			  <!-- Content before clicking goes here -->
 			 
 			  <div class="thumbnail1" style="float: left; margin-left: 20px; margin-right: 14px;">
@@ -85,7 +85,7 @@
 		<div class="container" tabindex="6" id="content-row" onclick="toggleText('<%= item.image_url %><%= item.id %>'); ga('send', 'event', { eventCategory: 'Expand Video', eventAction: 'Expand', eventLabel: 'Other Video'});">
 	  
 		  <div class="toggler"  >
-			  
+			   <h2 id="votes" style="float: left"><%= (item.votes.count) %></h2>
 			  <!-- Content before clicking goes here -->
 			 
 			  <div class="thumbnail1" style="float: left; style="margin-left: 20px; margin-right: 20px;">
