@@ -11,6 +11,7 @@ class VideosController < ApplicationController
     @video = Video.create(video_params)
     if @video.save
       redirect_to @video
+      expire_fragment("index")
     else
      redirect_to root_url
       flash[:notice] = "Error"
@@ -43,7 +44,7 @@ class VideosController < ApplicationController
   def upvotevideo
    video = Video.find(params[:id])
    video.vote!(request.ip)
-
+   expire_fragment("index")
    redirect_to root_url
   end
   
