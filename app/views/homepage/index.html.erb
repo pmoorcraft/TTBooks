@@ -11,6 +11,8 @@
 	  		<h3 class="sub-header">For Startup founders:</h3>
 	  	</div>
 		
+		<% cache do %>
+ 	
 	  	<div class="col-md-12">
 	    	<%= render "books/operators" %>
 	 	</div>
@@ -37,6 +39,7 @@
 	  	<div id="otherbooks"></div> 
 	  		<%= render "books/others" %>	
 	  	<a class="btn btn-default btn-block" href="/archive" style="margin-bottom: 70px;"> View More </a>	  		  			
+	  	<% end %>
 		</div>
 	  
 	  	<a href="#" class="back-to-top" style="display: inline;">
