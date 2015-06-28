@@ -16,7 +16,7 @@
 
       <%= form_for homepages_path, method: :get do %>
         <%= text_field_tag :search, params[:search] %>
-        <%= submit_tag "Search" %>
+        <%= submit_tag "Search", :name => nil %>
       <% end %>
 	 </li>
 	 </ul>
