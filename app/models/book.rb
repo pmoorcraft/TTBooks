@@ -12,7 +12,7 @@ class Book < ActiveRecord::Base
   end
   
   def self.search(search)
-    where("title LIKE ?", "%#{search}%")
+    where("title LIKE ? OR header like ?", "%#{search}%", "%#{search}%")
   end
   
 end
