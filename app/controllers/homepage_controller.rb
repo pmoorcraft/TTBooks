@@ -6,6 +6,28 @@ class HomepageController < ApplicationController
     
 
     def index
+      if params[:search]
+        @books = Book.search(params[:search])
+        @videos = Video.search(params[:search])
+      
+        @operatorvideos = @videos.find_all {|i| i.tag == "operators" }      
+        @operatorbooks = @books.find_all {|i| i.tag == "operators" }  
+    
+        
+        @operator_feed = (@operatorbooks + @operatorvideos).sort_by { |a| Time.now - a.created_at}
+       
+        
+        @investorbooks = @books.find_all {|i| i.tag == "investors" }   
+        @investorvideos = @videos.find_all {|i| i.tag == "investors" }
+        @investor_feed = (@investorbooks + @investorvideos).sort_by { |a| Time.now - a.created_at}
+    
+            
+        @otherbooks = @books.find_all {|i| i.tag == "other" }
+        @othervideos = @videos.find_all {|i| i.tag == "other" }
+        @other_feed = (@otherbooks + @othervideos).sort_by { |a| Time.now - a.created_at}
+
+        
+      else
       
     @books = Book.all  
     @videos = Video.all  
@@ -30,7 +52,7 @@ class HomepageController < ApplicationController
 
     
     @page_title = "TTBooks | Books and Videos for Entrepreneurs and Startups"
-
+    end
     
     
   end

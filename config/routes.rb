@@ -38,6 +38,10 @@ Rails.application.routes.draw do
       post 'upvotevideo'
     end
   end
+  
+  resources :homepages do
+    
+  end
 
   # Example resource route with options:
   #   resources :products do

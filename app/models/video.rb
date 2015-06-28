@@ -8,4 +8,8 @@ class Video < ActiveRecord::Base
       Vote.create(:ip => ip, :video_id => id)
     end
   end
+  
+  def self.search(search)
+    where("title LIKE ?", "%#{search}%")
+  end
 end
