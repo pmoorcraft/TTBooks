@@ -1,6 +1,7 @@
 	
 	  <%= render "shared/navbar" %>
-	  <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+	  <div class="container" style="padding-top: 10px;">
+	  	<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 		<!-- TTBooks- Blog -->
 		<ins class="adsbygoogle"
 		     style="display:block"
@@ -10,6 +11,7 @@
 		<script>
 		(adsbygoogle = window.adsbygoogle || []).push({});
 		</script>
+		</div>
 	  <% cache do %>
 	  	<% @blogs.each do |blog| %>
 	  	<div class="container" id="blogcontainer">
