@@ -38,6 +38,7 @@
 			 	    	<% if item.free_book == "true" %>
 		     				<button class="btn btn-warning btn-small" style="margin-left: 5px; margin-right: 5px; margin-top: -1px; float:right;"><a style= "color: white;" href="<%= item.amazon %>">Free Book- Read Now</a></button>	
 		     			<% end %>
+		     			<a href="<%= item.amazon %>"><img src="https://s3-eu-west-1.amazonaws.com/ttbooks/images.png" style="float: right; height: 40px; padding-right: 2px; padding-bottom: 3px;"></a>
 			 	    	
 			 	    	<div>
 			 	    	<a class="resp-sharing-button__link" href="https://facebook.com/sharer/sharer.php?u=http%3A%2F%2Fwww.ttbooks.io/books/<%= item.id %>" target="_blank" onClick="ga('send', 'event', { eventCategory: 'Facebook Share', eventAction: 'Share', eventLabel: 'Old Investor Book'});"><div class="resp-sharing-button resp-sharing-button--facebook resp-sharing-button--small">
