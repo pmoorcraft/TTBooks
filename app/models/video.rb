@@ -10,6 +10,6 @@ class Video < ActiveRecord::Base
   end
   
   def self.search(search)
-    where("title LIKE ? OR description like ?", "%#{search}%", "%#{search}%")
+    where("title LIKE ? OR description like ? OR tag like ?", "%#{search}%", "%#{search}%", "%#{search}%")
   end
 end
