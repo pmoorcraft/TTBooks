@@ -53,7 +53,7 @@ class VideosController < ApplicationController
     @page_title = "#{@video.title} | TTBooks"
     @og_title = "#{@video.title} | TTBooks"
     @og_descrption = "#{@video.description} | TTBooks"
-    @og_image = "#{@video.image_url}"
+    @og_image = "http://i1.ytimg.com/vi/#{@video.image_url}/default.jpg"
     fresh_when @video
   end
   
