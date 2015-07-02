@@ -1,6 +1,6 @@
 class HomepageController < ApplicationController
     before_filter :set_page_title
-    
+
     
     
     
@@ -52,6 +52,7 @@ class HomepageController < ApplicationController
 
     
     @page_title = "TTBooks | Books and Videos for Entrepreneurs and Startups"
+     @og_title = "TTBooks | Books and Videos for Entrepreneurs and Startups"
     end
     
     
@@ -83,7 +84,7 @@ class HomepageController < ApplicationController
     @oldother_feed =  @oldother_feed.take(9)
     
     @page_title = "TTBooks Archive | Books and Videos for Entrepreneurs and Startups"
-
+     @og_title = "TTBooks Archive | Books and Videos for Entrepreneurs and Startups"
   end
   
   def bookfeed
@@ -105,6 +106,7 @@ class HomepageController < ApplicationController
   
   def about
     @page_title = "TTBooks About | Books and Videos for Entrepreneurs, Startup founders and investors and Business owners."
+     @og_title = "TTBooks About | Books and Videos for Entrepreneurs, Startup founders and investors and Business owners."
   end
 
   def readingroom
@@ -115,5 +117,8 @@ class HomepageController < ApplicationController
  
   def set_page_title
     @page_title = "TTBooks | Books and Videos for Entrepreneurs, Startup founders and investors and Business owners."
+    @og_title = "TTBooks | Books and Videos for Entrepreneurs, Startup founders and investors and Business owners."
+    @og_description = "Videos and books about business, marketing, funding, engineering and much more for tech startup entrepreneurs and investors."
+    @og_image = "https://s3-eu-west-1.amazonaws.com/ttbooks/Tech+Talks+%26+Books-logo+(2).png"
   end
 end

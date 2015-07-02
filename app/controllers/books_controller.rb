@@ -42,6 +42,9 @@ class BooksController < ApplicationController
   def show
     @book = Book.find(params[:id])
     @page_title = "#{@book.title} | TTBooks"
+    @og_title = "#{@book.title} | TTBooks"
+    @og_descrption = "#{@book.header} | TTBooks"
+    @og_image = "#{@book.imageurl}"
     fresh_when @book
   end
   

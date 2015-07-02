@@ -51,6 +51,9 @@ class VideosController < ApplicationController
   def show
     @video = Video.find(params[:id])
     @page_title = "#{@video.title} | TTBooks"
+    @og_title = "#{@video.title} | TTBooks"
+    @og_descrption = "#{@video.description} | TTBooks"
+    @og_image = "#{@video.image_url}"
     fresh_when @video
   end
   
@@ -62,6 +65,7 @@ class VideosController < ApplicationController
   
   def set_page_title
     @page_title = "TTBooks | Books and Videos for Entrepreneurs and Startups"
+    
   end
   
 end
