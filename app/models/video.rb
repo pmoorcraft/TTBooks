@@ -1,6 +1,6 @@
 class Video < ActiveRecord::Base
   has_many :votes, dependent: :destroy
-
+  validates :title, uniqueness: true
   
   
   def vote!(ip)

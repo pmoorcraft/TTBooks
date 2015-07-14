@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150620204707) do
+ActiveRecord::Schema.define(version: 20150713153202) do
 
   create_table "Videos", force: :cascade do |t|
     t.string   "title"
@@ -113,6 +113,14 @@ ActiveRecord::Schema.define(version: 20150620204707) do
   end
 
   add_index "commontator_threads", ["commontable_id", "commontable_type"], name: "index_commontator_threads_on_c_id_and_c_type", unique: true
+
+  create_table "users", force: :cascade do |t|
+    t.string   "name"
+    t.string   "email"
+    t.string   "password"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "votes", force: :cascade do |t|
     t.integer  "video_id"
