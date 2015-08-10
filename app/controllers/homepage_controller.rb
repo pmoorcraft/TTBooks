@@ -31,10 +31,10 @@ class HomepageController < ApplicationController
       
     @books = Book.all  
     @videos = Video.all  
-    @recentvideos = Video.where(created_at: (20.days.ago..Time.now))
+    @recentvideos = Video.where(created_at: (30.days.ago..Time.now))
   
     @operatorvideos = @recentvideos.find_all {|i| i.tag == "operators" }      
-    @recentbooks = Book.where(created_at: (20.days.ago..30.days.from_now))
+    @recentbooks = Book.where(created_at: (30.days.ago..30.days.from_now))
     @operatorbooks = @recentbooks.find_all {|i| i.tag == "operators" }  
 
     
@@ -61,8 +61,8 @@ class HomepageController < ApplicationController
   
   
   def archive
-    @oldbooks = Book.where(created_at: (1000.days.ago..20.days.ago))
-    @oldvideos = Video.where(created_at: (1000.days.ago..20.days.ago))
+    @oldbooks = Book.where(created_at: (1000.days.ago..30.days.ago))
+    @oldvideos = Video.where(created_at: (1000.days.ago..30.days.ago))
     
     
     @oldoperatorbooks = @oldbooks.find_all {|i| i.tag == "operators" }    
