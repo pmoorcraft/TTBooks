@@ -31,10 +31,10 @@ class HomepageController < ApplicationController
       
     @books = Book.all  
     @videos = Video.all  
-    @recentvideos = Video.where(created_at: (10.days.ago..Time.now))
+    @recentvideos = Video.where(created_at: (20.days.ago..Time.now))
   
     @operatorvideos = @recentvideos.find_all {|i| i.tag == "operators" }      
-    @recentbooks = Book.where(created_at: (10.days.ago..30.days.from_now))
+    @recentbooks = Book.where(created_at: (20.days.ago..30.days.from_now))
     @operatorbooks = @recentbooks.find_all {|i| i.tag == "operators" }  
 
     
@@ -61,27 +61,27 @@ class HomepageController < ApplicationController
   
   
   def archive
-    @oldbooks = Book.where(created_at: (1000.days.ago..10.days.ago))
-    @oldvideos = Video.where(created_at: (1000.days.ago..10.days.ago))
+    @oldbooks = Book.where(created_at: (1000.days.ago..20.days.ago))
+    @oldvideos = Video.where(created_at: (1000.days.ago..20.days.ago))
     
     
     @oldoperatorbooks = @oldbooks.find_all {|i| i.tag == "operators" }    
     @oldoperatorvideos = @oldvideos.find_all {|i| i.tag == "operators" }
     @oldoperator_feed = (@oldoperatorbooks + @oldoperatorvideos).sort_by { |a| Time.now - a.created_at}
-    @oldoperator_feed = @oldoperator_feed.take(9)
+    @oldoperator_feed = @oldoperator_feed.take(10)
     
     
     
     @oldinvestorbooks = @oldbooks.find_all {|i| i.tag == "investors" }       
     @oldinvestorvideos = @oldvideos.find_all {|i| i.tag == "investors" }
     @oldinvestor_feed = (@oldinvestorbooks + @oldinvestorvideos).sort_by { |a| Time.now - a.created_at}
-    @oldinvestor_feed =  @oldinvestor_feed.take(9)
+    @oldinvestor_feed =  @oldinvestor_feed.take(10)
      
      
     @oldotherbooks = @oldbooks.find_all {|i| i.tag == "other" }
     @oldothervideos = @oldvideos.find_all {|i| i.tag == "other" }
     @oldother_feed = (@oldotherbooks + @oldothervideos).sort_by { |a| Time.now - a.created_at}
-    @oldother_feed =  @oldother_feed.take(9)
+    @oldother_feed =  @oldother_feed.take(10)
     
     @page_title = "TTBooks Archive | Books and Videos for Entrepreneurs and Startups"
      @og_title = "TTBooks Archive | Books and Videos for Entrepreneurs and Startups"
